@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash SAS4 Calculators</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="icon" type="image/png" href="icon.png">
+	<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+	<header>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+        <div class="container-fluid">
+            <a href="index.html"><img src="sas4_icon.jpg" alt="Site Logo" height="40" class="site-logo rounded"></a>
+            <div class="container mx-1">
+            <h2 style="color:white">Flash SAS4 Calculators</h2>
+            </div>
+
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Main Page</a>
+                    </li>
+					<li class="nav-item">
+						<a class="nav-link active" href="dps.html">DPS</a>
+					</li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="armor.html">Armor</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	</header>
+
+	<div class="container text-center mt-5">
+		<table class="table table-bordered" id="armor_table">
+			<thead>
+				<tr>
+					<th>Armor Slot</th>
+					<th>Mastery Level</th>
+					<th>Collections</th>
+					<th>Augments</th>
+					<th>Armor Piece</th>
+					<th>Rarity</th>
+				<tr>
+			</thead>
+			<tbody>
+                <tr>
+					<td>
+                        Helmet<br>
+                        <div class="container mt-4">
+                            <img src="sprites/helm.png" alt="Helmet Icon" height="40">
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" id="helmet_mastery" class="form-control-sm" min="0" max="5" value="0">
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" id="helmet_collection_standard">
+                            Standard
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="smart_target" class="form-control-sm" min="0" max="12" value="0">
+                            Smart Target
+                        </label>
+                        <br>
+                        <label>
+                            <input type="number" id="target_assist" class="form-control-sm" min="0" max="12" value="0">
+                            Target Assist
+                        </label>
+                    </td>
+                    <td>
+                        <select id="helm">
+                            <option value="titan_helm">Titan</option>
+                            <option value="dragonfly_helm">Dragonfly</option>
+                            <option value="medusa_helm">Medusa</option>
+                            <option value="hardplate_helm">Hardplate</option>
+                            <option value="other_helm" selected>Other</option>
+                        </select>
+                        <!--
+                        <label>
+                            <input type="radio" id="helm" name="helm" value="titan_helm">
+                            Titan
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="helm" name="helm" value="dragonfly_helm">
+                            Dragonfly
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="helm" name="helm" value="medusa_helm">
+                            Medusa
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="helm" name="helm" value="hardplate_helm">
+                            Hardplate
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="helm" name="helm" value="other_helm">
+                            Other
+                        </label>
+                        -->
+                    </td>
+                    <td>
+                        <select id="helmet_rarity">
+                            <option value="standard" selected>Standard</option>
+                            <option value="red_black">Red/Black</option>
+                        </select>
+                        <!--
+                        <label>
+                            <input type="radio" name="helmet_rarity" value="standard" id="helmet_rarity">
+                            Standard
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="helmet_rarity" value="red_black" id="helmet_rarity">
+                            Red/Black
+                        </label>
+                        -->
+                    </td>
+                </tr>
+
+
+
+                <tr>
+					<td>
+                        Gloves<br>
+                        <div class="container mt-4">
+                            <img src="sprites/gloves.png" alt="Gloves Icon" height="40">
+                        </div>
+                    </td>
+                    <td>
+                        <input type="number" id="gloves_mastery" class="form-control-sm" min="0" max="5" value="0">
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" id="gloves_collection_red">
+                            Red
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="nimble" class="form-control-sm" min="0" max="12" value="0">
+                            Nimble
+                        </label>
+                    </td>
+                    <td>
+                        <select id="gloves">
+                            <option value="titan_gloves">Titan</option>
+                            <option value="medusa_gloves">Medusa</option>
+                            <option value="dragonfly_gloves">Dragonfly</option>
+                            <option value="ronson_gloves">Ronson</option>
+                            <option value="hardplate_gloves">Hardplate</option>
+                            <option value="other_gloves" selected>Other</option>
+                        </select>
+
+                        <!--
+                        <label>
+                            <input type="radio" id="gloves" name="gloves" value="titan_gloves">
+                            Titan
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="gloves" name="gloves" value="medusa_gloves">
+                            Medusa
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="gloves" name="gloves" value="dragonfly_gloves">
+                            Dragonfly
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="gloves" name="gloves" value="ronson_gloves">
+                            Ronson
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="gloves" name="gloves" value="hardplate_gloves">
+                            Hardplate
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" id="gloves" name="gloves" value="other_gloves">
+                            Other
+                        </label>
+                        -->
+                    </td>
+                    <td>
+                        <select id="gloves_rarity">
+                            <option value="standard" selected>Standard</option>
+                            <option value="red_black">Red/Black</option>
+                        </select>
+
+                        <!--
+                        <label>
+                            <input type="radio" name="gloves_rarity" value="standard" id="gloves_rarity">
+                            Standard
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="gloves_rarity" value="red_black" id="gloves_rarity">
+                            Red/Black
+                        </label>
+                        -->
+                    </td>
+                </tr>
+
+
+
+                <tr>
+					<td>
+                        Pants<br>
+                        <div class="container mt-4">
+                            <img src="sprites/pants.png" alt="Pants Icon" height="40">
+                        </div>
+                    </td>
+                    <td>
+                        <p>-</p>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" id="pants_collection_standard">
+                            Standard
+                        </label>
+                    </td>
+                    <td>
+                        <p>-</p>
+                    </td>
+                    <td>
+                        <p>-</p>
+                    </td>
+                    <td>
+                        <p>-</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="text-center">
+                        <button id="max_armor_button"><b>Max Everything</b></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container text-center mt-5">
+        <table class="table table-bordered">
+            <thead>
+                <th>All Class Skills</th>
+                <th>Assault Skills</th>
+                <th>Heavy Skills</th>
+                <th>Medic Skills</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="number" id="fast_reload" class="form-control-sm" min="0" max="25" value="0">
+                            Fast Reload
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="adrenaline" class="form-control-sm" min="0" max="25" value="0">
+                            Adrenaline
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="hold_the_line" class="form-control-sm" min="0" max="25" value="0">
+                            Hold The Line
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="biocleanse_bomb" class="form-control-sm" min="0" max="25" value="0">
+                            Biocleanse Bomb
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="number" id="critical_shot" class="form-control-sm" min="0" max="25" value="0">
+                            Critical Shot
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="killing_spree" class="form-control-sm" min="0" max="25" value="0">
+                            Killing Spree
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="heavy_gear" class="form-control-sm" min="0" max="25" value="0">
+                            Heavy Gear
+                        </label>
+                    </td>
+                    <td>
+                        <button id="25_bcb">25 BCB</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="11_fast_reload">11 Fast Reload</button>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="deadly_force" class="form-control-sm" min="0" max="25" value="0">
+                            Deadly Force
+                        </label>
+                    </td>
+                    <td><button id="25_htl">25 HTL</button></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="25_critical_shot">25 Critical Shot</button>
+                    </td>
+                    <td>
+                        <button id="25_ks_adr">25 ADR + KS</button>
+                    </td>
+                    <td>
+                        <button id="25_htl_hg">25 HTL + HG</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+	</div>
+
+
+    <div class="container text-center mt-5">
+        <table class="gun-table table table-bordered">
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="gun_name">
+                            Gun
+                        </label>
+                    </td>
+                    <td>
+                        <select id="gun_name">
+                            <option value="no_gun" selected>----------</option>
+                            <option value="Bayonet">Bayonet</option>
+                            <option value="CM 000 Kelvin">CM 000 Kelvin</option>
+                            <option value="CM 202">CM 202</option>
+                            <option value="CM 205">CM 205</option>
+                            <option value="CM 225">CM 225</option>
+                            <option value="CM 307">CM 307</option>
+                            <option value="CM 330">CM 330</option>
+                            <option value="CM 351 Sunflare">CM 351 Sunflare</option>
+                            <option value="CM 401 Planet Stormer">CM 401 Planet Stormer</option>
+                            <option value="CM 440 Titan">CM 440 Titan</option>
+                            <option value="CM 451 Starburst">CM 451 Starburst</option>
+                            <option value="CM 467">CM 467</option>
+                            <option value="CM 505 Alpha Ltd. Edition">CM 505 Alpha Ltd. Edition</option>
+                            <option value="CM 505">CM 505</option>
+                            <option value="CM 530 BabyCOM">CM 530 BabyCOM</option>
+                            <option value="CM 800 Jupiter">CM 800 Jupiter</option>
+                            <option value="CM Gigavolt">CM Gigavolt</option>
+                            <option value="CM Laser Drill">CM Laser Drill</option>
+                            <option value="CM Proton Arc">CM Proton Arc</option>
+                            <option value="CM X-1 Furie">CM X-1 Furie</option>
+                            <option value="Donderbus">Donderbus</option>
+                            <option value="Gebirgskanone">Gebirgskanone</option>
+                            <option value="HIKS 3100">HIKS 3100</option>
+                            <option value="HIKS 888 CAW">HIKS 888 CAW</option>
+                            <option value="HIKS A10">HIKS A10</option>
+                            <option value="HIKS M1000">HIKS M1000</option>
+                            <option value="HIKS S300">HIKS S300</option>
+                            <option value="HIKS S4000">HIKS S4000</option>
+                            <option value="HVM 001">HVM 001</option>
+                            <option value="HVM 002">HVM 002</option>
+                            <option value="HVM 004">HVM 004</option>
+                            <option value="HVM 005 G-Class">HVM 005 G-Class</option>
+                            <option value="HVM 008">HVM 008</option>
+                            <option value="HVM MPG">HVM MPG</option>
+                            <option value="Handkanone">Handkanone</option>
+                            <option value="Hard Thorn">Hard Thorn</option>
+                            <option value="Heartburn">Heartburn</option>
+                            <option value="Hornet">Hornet</option>
+                            <option value="Hotspot">Hotspot</option>
+                            <option value="Lone Star">Lone Star</option>
+                            <option value="Luftplatzen">Luftplatzen</option>
+                            <option value="Mixmaster">Mixmaster</option>
+                            <option value="Mustang">Mustang</option>
+                            <option value="Phantom">Phantom</option>
+                            <option value="Planet Stormer Ltd Edition">Planet Stormer Ltd Edition</option>
+                            <option value="Poison Claw">Poison Claw</option>
+                            <option value="Proposition">Proposition</option>
+                            <option value="RIA 1010">RIA 1010</option>
+                            <option value="RIA 15 SE">RIA 15 SE</option>
+                            <option value="RIA 20 DSC">RIA 20 DSC</option>
+                            <option value="RIA 20 Para">RIA 20 Para</option>
+                            <option value="RIA 20 Striker">RIA 20 Striker</option>
+                            <option value="RIA 30 Strikeforce">RIA 30 Strikeforce</option>
+                            <option value="RIA 313">RIA 313</option>
+                            <option value="RIA 40">RIA 40</option>
+                            <option value="RIA 45 Para">RIA 45 Para</option>
+                            <option value="RIA 50">RIA 50</option>
+                            <option value="RIA 7">RIA 7</option>
+                            <option value="RIA 75">RIA 75</option>
+                            <option value="RIA 8A">RIA 8A</option>
+                            <option value="RIA T40">RIA T40</option>
+                            <option value="RIA T7">RIA T7</option>
+                            <option value="RIA Trident">RIA Trident</option>
+                            <option value="Raptor">Raptor</option>
+                            <option value="Ricochet">Ricochet</option>
+                            <option value="Ronson 45">Ronson 45</option>
+                            <option value="Ronson 50">Ronson 50</option>
+                            <option value="Ronson 55">Ronson 55</option>
+                            <option value="Ronson 5X5">Ronson 5X5</option>
+                            <option value="Ronson 65-a">Ronson 65-a</option>
+                            <option value="Ronson 70">Ronson 70</option>
+                            <option value="Ronson LBM">Ronson LBM</option>
+                            <option value="Ronson WP Flamethrower">Ronson WP Flamethrower</option>
+                            <option value="Ronson WPX Incinerator">Ronson WPX Incinerator</option>
+                            <option value="Sabre">Sabre</option>
+                            <option value="Shockfield">Shockfield</option>
+                            <option value="Shotlite Tempest">Shotlite Tempest</option>
+                            <option value="Shredder">Shredder</option>
+                            <option value="Stripper">Stripper</option>
+                            <option value="Sub-light COM2">Sub-light COM2</option>
+                            <option value="Supermarine Alpha Ltd Edition">Supermarine Alpha Ltd. Edition</option>
+                            <option value="Supermarine">Supermarine</option>
+                            <option value="T-101 Feldhaubitz">T-101 Feldhaubitz</option>
+                            <option value="T-102 Jagdfaust">T-102 Jagdfaust</option>
+                            <option value="Tombstone">Tombstone</option>
+                            <option value="Torment">Torment</option>
+                            <option value="Trailblazer">Trailblazer</option>
+                            <option value="Vitriol">Vitriol</option>
+                            <option value="Z-1 Assault">Z-1 Assault</option>
+                            <option value="Z-2 LMP">Z-2 LMP</option>
+                            <option value="Z-5 Heavy">Z-5 Heavy</option>
+                            <option value="Zerfallen">Zerfallen</option>
+                        </select>
+                    </td>
+                    <td>
+                        <label>
+                            Rarity
+                        </label>
+                    </td>
+                    <td>
+                        <select id="gun_rarity">
+                            <option value="0">Standard</option>
+                            <option value="1">Red</option>
+                            <option value="2">Black</option>
+                        </select>
+                        <!-- 
+                        <label>
+                            <input type="radio" name="gun_rarity" value="0" id="gun_rarity">
+                            Standard
+                        </label>
+                        <label>
+                            <input type="radio" name="gun_rarity" value="1" id="gun_rarity">
+                            Red
+                        </label>
+                        <label>
+                            <input type="radio" name="gun_rarity" value="2" id="gun_rarity">
+                            Black
+                        </label>
+                        -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            Augment 1
+                        </label>
+                    </td>
+                    <td>
+                        <select id="augment_1">
+                            <option value="no_aug" selected>----------</option>
+                            <option value="deadly">Deadly</option>
+                            <option value="overclocked">Overclocked</option>
+                            <option value="adaptive">Adaptive</option>
+                            <option value="pinpoint">Pinpoint</option>
+                            <option value="capacity">Capacity</option>
+                            <option value="enlarged">Enlarged</option>
+                            <option value="tenacious">Tenacious</option>
+                            <option value="skeletonized">Skeletonized</option>
+                            <option value="piercing">Piercing</option>
+                            <option value="race_modded">Race Modded</option>
+                        </select>
+                        <input type="number" id="augment_1_level" min="0" max="12" value="0">
+                        <button id="augment_1_grade_12">Grade 12</button>
+                        <button id="augment_1_grade_10">Grade 10</button>
+                    </td>
+                    <td>
+                        Masteries
+                    </td>
+                    <td>
+                        <label>
+                            <input type="number" id="gun_mastery" min="0" max="5" value="0">
+                            Gun
+                        </label>
+                        <label class="ms-4">
+                            <input type="number" id="ammo_mastery" min="0" max="5" value="0">
+                            HDA
+                        </label>
+                        <label class="ms-4">
+                            <input type="number" id="flamer_mastery" min="0" max="5" value="0">
+                            <span class="additional-information" title="Flamer mastery T3 affects all guns with DoT.">Flamer</span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            Augment 2
+                        </label>
+                    </td>
+                    <td>
+                        <select id="augment_2">
+                            <option value="no_gun" selected>----------</option>
+                            <option value="deadly">Deadly</option>
+                            <option value="overclocked">Overclocked</option>
+                            <option value="adaptive">Adaptive</option>
+                            <option value="pinpoint">Pinpoint</option>
+                            <option value="capacity">Capacity</option>
+                            <option value="enlarged">Enlarged</option>
+                            <option value="tenacious">Tenacious</option>
+                            <option value="skeletonized">Skeletonized</option>
+                            <option value="piercing">Piercing</option>
+                            <option value="race_modded">Race Modded</option>
+                        </select>
+                        <input type="number" id="augment_2_level" min="0" max="12" value="0">
+                        <button id="augment_2_grade_12">Grade 12</button>
+                        <button id="augment_2_grade_10">Grade 10</button>
+                    </td>
+                    <td>
+                        Collections
+                    </td>
+                    <td>
+                        <label>
+                            <input type="checkbox" id="standard_gun_collection">
+                            Standard
+                        </label>
+                        <label>
+                            <input type="checkbox" id="red_gun_collection">
+                            Red
+                        </label>
+                        <label>
+                            <input type="checkbox" id="black_gun_collection">
+                            Black
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            Augment 3
+                        </label>
+                    </td>
+                    <td>
+                        <select id="augment_3">
+                            <option value="no_gun" selected>----------</option>
+                            <option value="deadly">Deadly</option>
+                            <option value="overclocked">Overclocked</option>
+                            <option value="adaptive">Adaptive</option>
+                            <option value="pinpoint">Pinpoint</option>
+                            <option value="capacity">Capacity</option>
+                            <option value="enlarged">Enlarged</option>
+                            <option value="tenacious">Tenacious</option>
+                            <option value="skeletonized">Skeletonized</option>
+                            <option value="piercing">Piercing</option>
+                            <option value="race_modded">Race Modded</option>
+                        </select>
+                        <input type="number" id="augment_3_level" min="0" max="12" value="0">
+                        <button id="augment_3_grade_12">Grade 12</button>
+                        <button id="augment_3_grade_10">Grade 10</button>
+                    </td>
+                    <td>
+                        Base Cores
+                    </td>
+                    <td>
+                        <input type="number" id="weapon_base_cores" min="0" max="11" value="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            Augment 4
+                        </label>
+                    </td>
+                    <td>
+                        <select id="augment_4">
+                            <option value="no_gun" selected>----------</option>
+                            <option value="deadly">Deadly</option>
+                            <option value="overclocked">Overclocked</option>
+                            <option value="adaptive">Adaptive</option>
+                            <option value="pinpoint">Pinpoint</option>
+                            <option value="capacity">Capacity</option>
+                            <option value="enlarged">Enlarged</option>
+                            <option value="tenacious">Tenacious</option>
+                            <option value="skeletonized">Skeletonized</option>
+                            <option value="piercing">Piercing</option>
+                            <option value="race_modded">Race Modded</option>
+                        </select>
+                        <input type="number" id="augment_4_level" min="0" max="12" value="0">
+                        <button id="augment_4_grade_12">Grade 12</button>
+                        <button id="augment_4_grade_10">Grade 10</button>
+                    </td>
+                    <td>
+                        Target
+                    </td>
+                    <td>
+                        <select id="enemy_rarity">
+                            <option value="no_rarity" selected>----------</option>
+                            <option value="normal">Normal</option>
+                            <option value="fetid">Fetid</option>
+                            <option value="evolved">Evolved</option>
+                            <option value="apex">Apex</option>
+                            <option value="savage">Savage</option>
+                        </select>
+                        <select id="enemy_type">
+                            <option value="no_enemy" selected>----------</option>
+                            <option value="necrosis">Necrosis</option>
+                        </select>
+                        <select id="elite_type">
+                            <option value="not_elite" selected>----------</option>
+                            <option value="elite_other">Elite (other)</option>
+                            <option value="chitinous_hide">Elite (Chitinous Hide)</option>
+                        </select>
+                        <p>in</p>
+                        <select id="gamemode">
+                            <option value="no_mode" selected>----------</option>
+                            <option value="normal_mode">Normal</option>
+                            <option value="nightmare">Nightmare</option>
+                            <option value="apocalypse">Apocalypse</option>
+                        </select>
+                        <label class="ms-5">
+                            <input type="checkbox" id="red_perk">
+                            Killing Machine
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4" class="text-center">
+                        <button id="max_weapon_button"><b>Max Everything</b></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <button class="btn btn-success wide-button" id="calculate_button">Calculate!</button>
+        <br>
+        <br>
+        <br>
+        <div class="container border results-box py-2">
+            <h5><b>Results:</b></h5>
+            <div id="results"></div>
+        </div>
+        <div class="container">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script>
+        /*
+
+        TO DO LIST/KNOWN ISSUES
+
+        - my code sucks (unfixable)
+        - flamer mastery isn't factored into dot duration yet
+        - prem guns/cs guns won't calculate if wrong rarity is selected
+        - burst guns are completely wrong atm (doesn't factor in burst count/delay (pls help))
+        - class skills are not factored into average dps calc
+        - max everything buttons don't work anymore
+        - need to change dropdowns back to radio buttons
+        - capacity calc probably slightly wrong for low capacity pistols w/ mastery
+        - semi auto fire rates are wrong
+        - target system needs to be finished
+        - results table needs reformatting
+
+        */
+        const helm_m = document.getElementById("helmet_mastery");
+        const gloves_m = document.getElementById("gloves_mastery");
+        const st = document.getElementById("smart_target");
+        const ta = document.getElementById("target_assist");
+        const nimble = document.getElementById("nimble");
+        const max_armor_button = document.getElementById("max_armor_button");
+        const mh = document.getElementById("helmet_mastery");
+        const mg = document.getElementById("gloves_mastery");
+        const hcs = document.getElementById("helmet_collection_standard");
+        const gcr = document.getElementById("gloves_collection_red");
+        const pcs = document.getElementById("pants_collection_standard");
+        const helmet_rarity = document.getElementById("helmet_rarity");
+        const gloves_rarity = document.getElementById("gloves_rarity");
+        const fr_button = document.getElementById("11_fast_reload");
+        const cs_button = document.getElementById("25_critical_shot");
+        const adr_ks_button = document.getElementById("25_ks_adr");
+        const htl_button = document.getElementById("25_htl");
+        const htl_hg_button = document.getElementById("25_htl_hg");
+        const bcb_button = document.getElementById("25_bcb");
+        const fast_reload = document.getElementById("fast_reload");
+        const critical_shot = document.getElementById("critical_shot");
+        const adrenaline = document.getElementById("adrenaline");
+        const killing_spree = document.getElementById("killing_spree");
+        const deadly_force = document.getElementById("deadly_force");
+        const hold_the_line = document.getElementById("hold_the_line");
+        const heavy_gear = document.getElementById("heavy_gear");
+        const biocleanse_bomb = document.getElementById("biocleanse_bomb");
+        const a1g12 = document.getElementById("augment_1_grade_12");
+        const a1g10 = document.getElementById("augment_1_grade_10");
+        const a2g12 = document.getElementById("augment_2_grade_12");
+        const a2g10 = document.getElementById("augment_2_grade_10");
+        const a3g12 = document.getElementById("augment_3_grade_12");
+        const a3g10 = document.getElementById("augment_3_grade_10");
+        const a4g12 = document.getElementById("augment_4_grade_12");
+        const a4g10 = document.getElementById("augment_4_grade_10");
+        const augment_1_level = document.getElementById("augment_1_level");
+        const augment_2_level = document.getElementById("augment_2_level");
+        const augment_3_level = document.getElementById("augment_3_level");
+        const augment_4_level = document.getElementById("augment_4_level");
+        const max_weapon_button = document.getElementById("max_weapon_button");
+        const gun_rarity_black = document.getElementById("gun_rarity_black");
+        const gun_mastery = document.getElementById("gun_mastery");
+        const ammo_mastery = document.getElementById("ammo_mastery");
+        const standard_gun_collection = document.getElementById("standard_gun_collection");
+        const red_gun_collection = document.getElementById("red_gun_collection");
+        const black_gun_collection = document.getElementById("black_gun_collection");
+        const weapon_base_cores = document.getElementById("weapon_base_cores");
+        const calculate_button = document.getElementById("calculate_button");
+        const results = document.getElementById("results");
+        const red_perk = document.getElementById("red_perk");
+        const flamer_mastery = document.getElementById("flamer_mastery");
+
+        const unique_guns = ["HIKS M1000","CM X-1 Furie","RIA Trident","Handkanone","Bayonet","Planet Stormer Ltd Edition","CM 352 Quasar","HIKS A10","CM 000 Kelvin","Donderbus","Ronson 5X5","RIA 75","HIKS 888 CAW","RIA 8A","RIA 15 SE","CM 467","CM Laser Drill","CM Proton Arc","Ronson WPX Incinerator","Ricochet","Vitriol","Zerfallen","Torment","HIKS S4000","CM 505 Alpha Ltd. Edition","Supermarine Alpha Ltd Edition"]
+        const cs_guns = ["HIKS M1000","CM X-1 Furie","RIA Trident"]
+        const prem_guns = ["Handkanone","Bayonet","Planet Stormer Ltd Edition","CM 352 Quasar","HIKS A10","CM 000 Kelvin","Donderbus","Ronson 5X5","RIA 75","HIKS 888 CAW","RIA 8A","RIA 15 SE","CM 467","CM Laser Drill","CM Proton Arc","Ronson WPX Incinerator","Ricochet","Vitriol","Zerfallen","Torment","HIKS S4000","CM 505 Alpha Ltd. Edition","Supermarine Alpha Ltd Edition"]
+
+        let weaponsData;
+        async function loadWeaponData() {
+            const response = await fetch("data/full_weapon_data.json");
+            weaponsData = await response.json();
+        };
+        loadWeaponData();
+
+        let skillsData;
+        async function loadSkillsData() {
+            const response = await fetch("data/skill_data.json");
+            skillsData = await response.json();
+        };
+        loadSkillsData();
+
+        let masteryData;
+        async function loadMasteryData() {
+            const response = await fetch("data/mastery_data.json");
+            masteryData = await response.json();
+        };
+        loadMasteryData()
+
+        let collectionsData;
+        async function loadCollectionsData() {
+            const response = await fetch("data/collection_data.json");
+            collectionsData = await response.json();
+        };
+        loadCollectionsData();
+
+        let augmentData;
+        async function loadAugmentData() {
+            const response = await fetch("data/augment_data.json");
+            augmentData = await response.json();
+        };
+        loadAugmentData();
+
+        let armorData;
+        async function loadArmorData() {
+            const response = await fetch("data/armor_data.json");
+            armorData = await response.json();
+        };
+        loadArmorData();
+
+        // Resets mastery sliders to 5 or 0 if limits are exceeded
+        helm_m.addEventListener("input", () => {
+            if (helm_m.value > 5) {
+                helm_m.value = 5;
+            }
+            if (helm_m.value < 0) {
+                helm_m.value = 0;
+            }
+        });
+        
+
+        gloves_m.addEventListener("input", () => {
+            if (gloves_m.value > 5) {
+                gloves_m.value = 5;
+            }
+            if (gloves_m.value < 0) {
+                gloves_m.value = 0;
+            }
+        });
+        // Resets augment sliders to 12 or 0 if limits are exceeded
+        
+
+        st.addEventListener("input",()=>{
+            if(st.value>12){
+                st.value = 12;
+            }
+            if(st.value<0){
+                st.value = 0;
+            }
+        });
+
+        
+
+        ta.addEventListener("input",()=>{
+            if(ta.value>12){
+                ta.value = 12;
+            }
+            if(ta.value<0){
+                ta.value = 0;
+            }
+        });
+
+        
+
+        nimble.addEventListener("input",()=>{
+            if(nimble.value>12){
+                nimble.value = 12;
+            }
+            if(nimble.value<0){
+                nimble.value = 0;
+            }
+        });
+
+        // max everything script
+        max_armor_button.addEventListener("click",()=>{
+            mh.value=5;
+            mg.value=5;
+            hcs.checked=true;
+            gcr.checked=true;
+            pcs.checked=true;
+            st.value=12;
+            ta.value=12;
+            nimble.value=12;
+            helmet_rarity.checked=true;
+            gloves_rarity.checked=true;
+        });
+
+        // same thing but for common skill breakpoints
+
+        fr_button.addEventListener("click",()=>{
+            fast_reload.value = 11;
+        });
+        cs_button.addEventListener("click",()=>{
+            critical_shot.value = 25;
+        });
+        adr_ks_button.addEventListener("click",()=>{
+            killing_spree.value = 25;
+            adrenaline.value=25;
+        });
+        htl_button.addEventListener("click",()=>{
+            hold_the_line.value = 25;
+        });
+        htl_hg_button.addEventListener("click",()=>{
+            hold_the_line.value = 25;
+            heavy_gear.value = 25;
+        });
+        bcb_button.addEventListener("click",()=>{
+            biocleanse_bomb.value = 25;
+        });
+
+        // same thing but for augments
+
+        a1g12.addEventListener("click",()=>{
+            augment_1_level.value = 12;
+        });
+        a1g10.addEventListener("click",()=>{
+            augment_1_level.value = 10;
+        });
+        a2g12.addEventListener("click",()=>{
+            augment_2_level.value = 12;
+        });
+        a2g10.addEventListener("click",()=>{
+            augment_2_level.value = 10;
+        });
+        a3g12.addEventListener("click",()=>{
+            augment_3_level.value = 12;
+        });
+        a3g10.addEventListener("click",()=>{
+            augment_3_level.value = 10;
+        });
+        a4g12.addEventListener("click",()=>{
+            augment_4_level.value = 12;
+        });
+        a4g10.addEventListener("click",()=>{
+            augment_4_level.value = 10;
+        });
+
+        // thing but for gun augs
+        augment_1_level.addEventListener("input",()=>{
+            if(augment_1_level.value>12){
+                augment_1_level.value = 12;
+            }
+            if(augment_1_level.value<0){
+                augment_1_level.value = 0;
+            }
+        });
+        augment_2_level.addEventListener("input",()=>{
+            if(augment_2_level.value>12){
+                augment_2_level.value = 12;
+            }
+            if(augment_2_level.value<0){
+                augment_2_level.value = 0;
+            }
+        });
+        augment_3_level.addEventListener("input",()=>{
+            if(augment_3_level.value>12){
+                augment_3_level.value = 12;
+            }
+            if(augment_3_level.value<0){
+                augment_3_level.value = 0;
+            }
+        });
+        augment_4_level.addEventListener("input",()=>{
+            if(augment_4_level.value>12){
+                augment_4_level.value = 12;
+            }
+            if(augment_4_level.value<0){
+                augment_4_level.value = 0;
+            }
+        });
+
+        // other thing but for gun augs
+
+        max_weapon_button.addEventListener("click",()=>{
+            gun_rarity_black.checked = true;
+            gun_mastery.value = 5;
+            ammo_mastery.value = 5;
+            standard_gun_collection.checked=true;
+            red_gun_collection.checked=true;
+            black_gun_collection.checked=true;
+            weapon_base_cores.value=11;
+            augment_1_level.value=12;
+            augment_2_level.value=12;
+            augment_3_level.value=12;
+            augment_4_level.value=12;
+        });
+
+        // you get the point bro
+
+        gun_mastery.addEventListener("input",()=>{
+            if(gun_mastery.value>5){
+                gun_mastery.value = 5;
+            }
+            if(gun_mastery.value<0){
+                gun_mastery.value = 0;
+            }
+        });
+        ammo_mastery.addEventListener("input",()=>{
+            if(ammo_mastery.value>5){
+                ammo_mastery.value = 5;
+            }
+            if(ammo_mastery.value<0){
+                ammo_mastery.value=0;
+            }
+        });
+        weapon_base_cores.addEventListener("input",()=>{
+            if(weapon_base_cores.value>11){
+                weapon_base_cores.value = 11;
+            }
+            if(weapon_base_cores.value<0){
+                weapon_base_cores.value = 0;
+            }
+        });
+        
+        function get_damage(gun_name,rarity) {
+            const gunData = weaponsData.filter(
+                item => item.name === gun_name
+            );
+            if(rarity<2 && !cs_guns.includes(gun_name)){
+                return gunData[rarity].damage;
+            } else if(!cs_guns.includes(gun_name)) {
+                return (gunData[rarity-1].damage)*1.5;
+            } else {
+                return gunData[0].damage;
+            }
+        };
+
+        function get_deadly_level(aug_array) {
+            if(aug_array.includes("deadly")){
+                const index = aug_array.indexOf("deadly");
+                return aug_array[index+4];
+            } else {
+                return 0;
+            }
+        };
+        
+        function get_ks_damage(level) {
+            if(level>0){
+                const killingSpree = skillsData.find(
+                    item => item.name === "killing_spree"
+                );
+                const level_to_find = "l" + String(level);
+                const ksDamage = killingSpree[level_to_find];
+                return ksDamage;
+            } else {
+                return 0;
+            }
+        };
+
+        function get_htl_damage(level) {
+            if(level>0){
+                const holdTheLine = skillsData.find(
+                    item => item.name === "hold_the_line"
+                );
+                const level_to_find = "l" + String(level);
+                const htlDamage = holdTheLine[level_to_find];
+                return htlDamage;
+            } else {
+                return 0;
+            }
+        };
+
+        function get_df_damage(level) {
+            if(deadly_force.value>0){
+                return 0.01*level;
+            } else {
+                return 0;
+            }
+        };
+
+        function get_mastery_damage(category,mastery_level) {
+            const damageMasteries = masteryData.filter(item=>item.damage !== undefined);
+            const foundMasts = damageMasteries.find(item2=>item2.category === category);
+            if(foundMasts !== undefined){
+                if(mastery_level >= foundMasts.damage_requirement){
+                    return foundMasts.damage;
+                } else {
+                    return 0;
+                }
+            } else {
+                return 0;
+            }
+        };
+
+        function get_collection_damage(category,collection_status) {
+            const damageCollections = collectionsData.filter(item=>item.damage !== undefined);
+            const foundColls = damageCollections.find(item2=>item2.category === category);
+            if(foundColls !== undefined){
+                if(collection_status[foundColls.damage_requirement] === true){
+                    return foundColls.damage;
+                } else {
+                    return 0;
+                }
+            } else {
+                return 0;
+            }
+        };
+
+        function get_smart_target_damage(level) {
+            if(level>0){
+                const smartTarget = augmentData.find(item=>item.name === "smart_target");
+                const stDamage = smartTarget[level];
+                return stDamage;
+            } else {
+                return 0;
+            }
+        };
+
+        function get_helmet_damage(helmet,rarity,mastery_level) {
+            if(helmet !== "other_helm"){
+                let helmDmg = 0;
+                const foundHelm = armorData.filter(
+                    item => item.name === helmet
+                );
+                if(rarity === "standard"){
+                    if(foundHelm[0].damage !== undefined){
+                        helmDmg = foundHelm[0].damage;
+                    }
+                } else {
+                    if(foundHelm[1].damage !== undefined){
+                    helmDmg = foundHelm[1].damage;
+                    }
+                }
+                if(mastery_level>=2){
+                    helmDmg += 0.01;
+                }
+                return helmDmg;
+            } else {
+                let helmDmg = 0;
+                if(mastery_level>=2){
+                    helmDmg += 0.01;
+                }
+                return helmDmg;
+            }
+        };
+
+        function get_gloves_damage(gloves,rarity,mastery_level) {
+            if(gloves !== "other_gloves"){
+                let glovesDmg = 0;
+                const foundGloves = armorData.filter(item=>item.name === gloves);
+                if(rarity === "standard"){
+                    if(foundGloves[0].damage !== undefined){
+                        glovesDmg = foundGloves[0].damage;
+                    }
+                } else {
+                    if(foundGloves[0].damage !== undefined){
+                        glovesDmg = foundGloves[1].damage;
+                    }
+                }
+                return glovesDmg;
+            } else {
+                return 0;
+            }
+        };
+
+        function get_hda_damage(level) {
+            if(level>0){
+                const ammoMastery = masteryData.find(
+                    item => item.name === "ammo"
+                );
+                const levelToFind = "l" + String(level);
+                return ammoMastery[levelToFind];
+            } else { 
+                return 0;
+            }
+        }
+        
+        function get_perk_damage(bool){
+            if(bool === true){
+                return 0.1;
+            } else {
+                return 0;
+            }
+        }
+
+        function get_crit_damage(level,category,mastery_level,collection_status) {
+            if(level>0){
+                const critSkill = skillsData.find(
+                    item => item.name === "critical_shot"
+                );
+                const levelToFind = "l" + String(level) + "damage";
+                let critDmg = critSkill[levelToFind];
+                if(category === 5 && mastery_level>=4){
+                    critDmg += 0.25;
+                }
+                if(category === 5 && collection_status[1] === true){
+                    critDmg += 0.1;
+                }
+                return critDmg;
+            } else {
+                let critDmg = 1;
+                if(category === 5 && mastery_level>=4){
+                    critDmg += 0.25;
+                }
+                if(category === 5 && collection_status[1] === true){
+                    critDmg += 0.1;
+                }
+                return critDmg;
+            }
+        }
+
+        function get_crit_chance(level,user_category,mastery_level,collection_status,aug_array) {
+            let critChance = 0;
+
+            const critChanceMasteries = masteryData.filter(
+                item => item.crit_chance !== undefined
+            );
+            const foundMastery = critChanceMasteries.find(
+                item => item.category === user_category
+            );
+            if(foundMastery !== undefined && mastery_level >= foundMastery.crit_chance_requirement){
+                critChance += foundMastery.crit_chance;
+            }
+
+            const critChanceCollections = collectionsData.filter(
+                item => item.crit_chance !== undefined
+            );
+            const foundCollection = critChanceCollections.find(
+                item => item.category === user_category
+            );
+            if(foundCollection !== undefined){
+                if(foundCollection.name === "assault_rifle" && collection_status[2] === true){
+                    critChance += 0.03;
+                }
+            }
+            if(hcs.checked === true){
+                critChance += 0.01;
+            }
+
+            if(level>0){
+                const critSkill = skillsData.find(
+                    item => item.name === "critical_shot"
+                );
+                const levelToFind = "l" + String(level) + "chance";
+                critChance += critSkill[levelToFind];
+            }
+
+            if(aug_array.includes("pinpoint")){
+                const index = aug_array.indexOf("pinpoint");
+                critChance += (0.03+0.01*(aug_array[index+4]-1));
+            }            
+
+            if(ta.value>0){
+                const targetAssist = augmentData.find(
+                    item => item.name === "target_assist"
+                );
+                const level = ta.value;
+                critChance += targetAssist[level];
+            }
+
+            if(red_perk.checked === true){
+                critChance += 0.1;
+            }
+
+            return critChance;
+        }
+
+        function get_pellet_count(weapon){
+            const foundWeapon = weaponsData.find(
+                item => item.name === weapon
+            );
+            return foundWeapon.projectileCount;
+        }
+        
+        function get_dot(weapon,rarity){
+            if(weapon !== "CM X-1 Furie"){
+                const weaponsAllRarities = weaponsData.filter(
+                    item => item.name === weapon
+                );
+                if(rarity<2){
+                    const foundWeapon = weaponsAllRarities.find(
+                        item => item.weaponVersion === rarity+1
+                    );
+                    return foundWeapon.dot;
+                } else {
+                    let foundWeapon = weaponsAllRarities.find(
+                        item => item.weaponVersion === rarity
+                    );
+                    if(foundWeapon !== undefined){
+                        return foundWeapon.dot*1.5;
+                    } else {
+                        foundWeapon = weaponsAllRarities.find(
+                            item => item.weaponVersion === rarity+1
+                        );
+                        return foundWeapon.dot;
+                    }
+                }
+            } else {
+                const furie = weaponsData.find(
+                    item => item.name === "CM X-1 Furie"
+                );
+                return furie.dot*1.25;
+            }
+        }
+
+        function get_dot_duration(weapon,rarity){
+            let multi;
+            if(flamer_mastery.value >= 3){
+                multi = 1.25;
+            } else {
+                multi = 1;
+            }
+            if(weapon !== "CM X-1 Furie"){
+                const weaponsAllRarities = weaponsData.filter(
+                    item => item.name === weapon
+                );
+                if(rarity<2){
+                    const foundWeapon = weaponsAllRarities.find(
+                        item => item.weaponVersion === rarity+1
+                    );
+                    if(foundWeapon.dotLength !== 0){
+                        return foundWeapon.dotLength;
+                    } else {
+                        return 1;
+                    }
+                } else if(!cs_guns.includes(weapon)){
+                    const foundWeapon = weaponsAllRarities.find(
+                        item => item.weaponVersion === rarity
+                    );
+                    if(foundWeapon !== undefined){
+                        if(foundWeapon.dotLength !== 0){
+                            return foundWeapon.dotLength;
+                        } else {
+                            return 1;
+                        }
+                    }
+                } else {
+                    return 1;
+                }
+            } else {
+                return 5;
+            }
+        }
+
+        function get_tenacious_level(aug_array){
+            if(aug_array.includes("tenacious")){
+                const index = aug_array.indexOf("tenacious");
+                return aug_array[index+4];
+            } else {
+                return 0;
+            }
+        }
+
+        function get_rps(weapon,rarity){
+            const weaponsAllRarities = weaponsData.filter(
+                item => item.name === weapon
+            );
+            if(rarity<2){
+                const foundWeapon = weaponsAllRarities.find(
+                    item => item.weaponVersion === rarity+1
+                );
+                return foundWeapon.rps;
+            } else if(!cs_guns.includes(weapon)){
+                const foundWeapon = weaponsAllRarities.find(
+                    item => item.weaponVersion === rarity
+                );
+                return foundWeapon.rps;
+            } else {
+                const foundWeapon = weaponsAllRarities.find(
+                    item => item.weaponVersion === rarity+1
+                );
+                return foundWeapon.rps;
+            }
+        }
+
+        function get_overclocked_level(aug_array){
+            if(aug_array.includes("overclocked")){
+                const index = aug_array.indexOf("overclocked");
+                return aug_array[index+4];
+            } else {
+                return 0;
+            }
+        }
+
+        function get_adrenaline_boost(level){
+            if(level>0){
+                const adren = skillsData.find(
+                    item => item.name === "adrenaline"
+                );
+                const levelToFind = "l" + String(level);
+                return adren[levelToFind];
+            } else {
+                return 0;
+            }
+        }
+
+        function get_mastery_rps(category,mastery_level){
+            if(category === 2 && mastery_level>=4){
+                return 0.15;
+            } else {
+                return 0;
+            }
+        }
+
+        function get_collection_rps(category,collection_status){
+            if(category === 2 && collection_status[1] === true){
+                return 0.05;
+            } else if(category === 9 && collection_status[2] === true){
+                return 0.1;
+            } else {
+                return 0;
+            }
+        }
+
+        function get_reload(weapon,rarity){
+            const weaponsAllRarities = weaponsData.filter(
+                item => item.name === weapon
+            );
+            let rarityToFind;
+            if(rarity<2){
+                rarityToFind = Number(rarity) + 1;
+            } else if(!cs_guns.includes(weapon)){
+                rarityToFind = Number(rarity);
+            } else {
+                rarityToFind = Number(rarity) + 1;
+            }
+            const foundWeapon = weaponsAllRarities.find(
+                item => item.weaponVersion === rarityToFind
+            );
+            let time = foundWeapon.reloadSpeed;
+            return time;
+        }
+
+        function get_rm_level(aug_array){
+            if(aug_array.includes("race_modded")){
+                const index = aug_array.indexOf("race_modded");
+                if(aug_array[index+4] !== 0){
+                    return aug_array[index+4];
+                } else {
+                    return -1;
+                }
+            } else {
+                return -1;
+            }
+        }
+
+        function get_fast_reload(level){
+            if(level>0){
+                const fastReload = skillsData.find(
+                    item => item.name === "fast_reload"
+                );
+                const levelToFind = "l" + String(level);
+                return fastReload[levelToFind];
+            } else {
+                return 0;
+            }
+        }
+
+        function get_gloves_reload(level,gloves,rarity,collection_status){
+            let bonus = 0;
+            
+            if(level>0){
+                const nim = augmentData.find(
+                    item => item.name === "nimble"
+                );
+                bonus += nim[level];
+            }
+
+            if(gloves !== "other_gloves"){
+                const glovesAllRarities = armorData.filter(
+                    item => item.name === gloves
+                );
+                const foundGloves = glovesAllRarities.find(
+                    item => item.rarity === rarity
+                );
+                if(foundGloves.reload_speed !== undefined){
+                    bonus += foundGloves.reload_speed;
+                }
+            }
+
+            if(collection_status === true){
+                bonus += 0.1;
+            }
+
+            return bonus;
+        }
+
+        function get_helmet_reload(helmet,rarity){
+            if(helmet !== "other_helmet"){
+                const helmetsAllRarities = armorData.filter(
+                    item => item.name === helmet
+                );
+                const foundHelmet = helmetsAllRarities.find(
+                    item => item.rarity === rarity
+                );
+                if(foundHelmet !== undefined && foundHelmet.reload_speed !== undefined){
+                    return foundHelmet.reload_speed;
+                } else {
+                    return 0;
+                }
+            } else {
+                return 0;
+            }
+        }
+
+        function get_collection_reload(gun_category,collection_status){
+            const reloadCollections = collectionsData.filter(
+                item => item.reload_speed !== undefined
+            );
+            const foundCollection = reloadCollections.find(
+                item => item.category === gun_category
+            );
+            if(foundCollection !== undefined && collection_status[foundCollection.reload_speed_requirement] === true){
+                return foundCollection.reload_speed;
+            } else {
+                return 0;
+            }
+        }
+
+        function get_mastery_reload(gun_category,mastery_level){
+            if(gun_category === 4 && mastery_level >= 1){
+                return 0.05;
+            } else {
+                return 0;
+            }
+        }
+
+        function get_gloves_mastery_reload(mastery_level){
+            if(mastery_level >= 3){
+                return 0.1;
+            } else {
+                return 0;
+            }
+        }
+
+        function get_clip_size(weapon,rarity,gun_category,collection_status,mastery_level,base_cores,aug_array){
+            let clip_size = 0;
+
+            const weaponsAllRarities = weaponsData.filter(
+                item => item.name === weapon
+            );
+            if(rarity<2 && !cs_guns.includes(weapon)){
+                const foundWeapon = weaponsAllRarities.find(
+                    item => item.weaponVersion === Number(rarity)+1
+                );
+                base_clip = foundWeapon.clipSize;
+                clip_size += foundWeapon.clipSize;
+            } else if(!cs_guns.includes(weapon)){
+                const foundWeapon = weaponsAllRarities.find(
+                    item => item.weaponVersion === Number(rarity)
+                );
+                base_clip = foundWeapon.clipSize;
+                clip_size += foundWeapon.clipSize;
+            } else {
+                const foundWeapon = weaponsAllRarities.find(
+                    item => item.weaponVersion === Number(rarity)+1
+                );
+                base_clip = foundWeapon.clipSize;
+                clip_size += foundWeapon.clipSize;
+            }
+
+            clip_size *= 1+0.05*base_cores;
+
+            if(aug_array.includes("capacity")){
+                const cap = augmentData.find(
+                    item => item.name === "capacity"
+                );
+                const index = aug_array.indexOf("capacity");
+                const level_index = aug_array[index+4];
+                const boost = cap[level_index];
+                clip_size *= 1+boost;
+            }
+
+            let conglomerate_1 = 0;
+
+            if(gun_category === 1 && mastery_level >= 3){
+                conglomerate_1 += 0.1;
+            } else if(gun_category === 9 && collection_status[1] === true){
+                conglomerate_1 += 0.05;
+            }
+
+            clip_size *= (1+conglomerate_1);
+
+            let conglomerate_2 = 0;
+            const clipSizeMasteries = masteryData.filter(
+                item => item.clip_size_flat !== undefined
+            );
+            const foundMastery = clipSizeMasteries.find(
+                item => item.category === gun_category
+            );
+            if(foundMastery !== undefined && mastery_level >= foundMastery.clip_size_flat_requirement){
+                conglomerate_2 += foundMastery.clip_size_flat;
+            }
+            const clipSizeCollections = collectionsData.filter(
+                item => item.clip_size_flat !== undefined
+            );
+            const foundCollection = clipSizeCollections.find(
+                item => item.category === gun_category
+            );
+            if(foundCollection !== undefined && collection_status[foundCollection.clip_size_flat_requirement] === true){
+                conglomerate_2 += foundCollection.clip_size_flat;
+            }
+
+            clip_size += conglomerate_2;
+
+            return clip_size;
+        }
+
+        calculate_button.addEventListener("click",()=>{
+            const user_gun = document.getElementById("gun_name");
+            const user_gun_block = weaponsData.filter(
+                item => item.name === user_gun.value
+            );
+            const user_gun_category = user_gun_block[0].category;
+            const gamemode = document.getElementById("gamemode");
+            const aug_1 = document.getElementById("augment_1");
+            const aug_2 = document.getElementById("augment_2");
+            const aug_3 = document.getElementById("augment_3");
+            const aug_4 = document.getElementById("augment_4");
+            const augs = [aug_1.value,aug_2.value,aug_3.value,aug_4.value,Number(augment_1_level.value),Number(augment_2_level.value),Number(augment_3_level.value),Number(augment_4_level.value)];
+            const base_core_level = document.getElementById("weapon_base_cores");
+            const user_helm = document.getElementById("helm");
+            const user_helm_rarity = document.getElementById("helmet_rarity");
+            const user_gloves = document.getElementById("gloves");
+            const user_gloves_rarity = document.getElementById("gloves_rarity");
+            const user_gun_collections = [standard_gun_collection.checked,red_gun_collection.checked,black_gun_collection.checked];
+            const user_gun_rarity = document.getElementById("gun_rarity");
+
+            let damage = (
+                (
+                    (
+                        get_damage(user_gun.value,Number(user_gun_rarity.value))*(1+0.05*Number(base_core_level.value))*(1+0.1*get_deadly_level(augs))
+                    )*(
+                        1+get_ks_damage(Number(killing_spree.value))+get_htl_damage(Number(hold_the_line.value))+get_df_damage(Number(deadly_force.value))+get_mastery_damage(user_gun_category,gun_mastery.value)+get_collection_damage(user_gun_category,user_gun_collections)+get_smart_target_damage(Number(st.value))+get_helmet_damage(user_helm.value,user_helm_rarity.value,Number(helm_m.value))+get_gloves_damage(user_gloves.value,user_gloves_rarity.value,Number(gloves_m.value))
+                    )
+                )*(
+                    1+get_hda_damage(ammo_mastery.value)
+                )*(
+                    1+get_perk_damage(red_perk.checked)
+                )*(
+                    get_pellet_count(user_gun.value)
+                )
+            );
+
+            
+            let dot_damage = (
+                (
+                    (
+                        (
+                            get_dot(user_gun.value,Number(user_gun_rarity.value))*(1+0.05*Number(base_core_level.value))*(1+0.1*get_tenacious_level(augs))
+                        )*(
+                            1+get_ks_damage(Number(killing_spree.value))+get_htl_damage(Number(hold_the_line.value))+get_df_damage(Number(deadly_force.value))+get_mastery_damage(user_gun_category,gun_mastery.value)+get_collection_damage(user_gun_category,user_gun_collections)+get_smart_target_damage(Number(st.value))+get_helmet_damage(user_helm.value,user_helm_rarity.value,Number(helm_m.value))+get_gloves_damage(user_gloves.value,user_gloves_rarity.value,Number(gloves_m.value))
+                        )
+                    )*(
+                        1+get_perk_damage(red_perk.checked)
+                    )
+                )
+            );
+
+            let dot_damage_per_tick = (
+                (
+                    (
+                        (
+                            get_dot(user_gun.value,Number(user_gun_rarity.value))*(1+0.05*Number(base_core_level.value))*(1+0.1*get_tenacious_level(augs))
+                        )*(
+                            1+get_ks_damage(Number(killing_spree.value))+get_htl_damage(Number(hold_the_line.value))+get_df_damage(Number(deadly_force.value))+get_mastery_damage(user_gun_category,gun_mastery.value)+get_collection_damage(user_gun_category,user_gun_collections)+get_smart_target_damage(Number(st.value))+get_helmet_damage(user_helm.value,user_helm_rarity.value,Number(helm_m.value))+get_gloves_damage(user_gloves.value,user_gloves_rarity.value,Number(gloves_m.value))
+                        )
+                    )*(
+                        1+get_perk_damage(red_perk.checked)
+                    )
+                )/(
+                    get_dot_duration(user_gun.value,Number(user_gun_rarity.value))
+                )
+            );
+
+
+            let crit_damage = damage*(1+get_crit_damage(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections));
+            let average_damage = damage*(1+(get_crit_damage(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections)*get_crit_chance(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections,augs)));
+
+            let super_crit_damage = "N/A";
+            if(user_gun_category === 5 && gun_mastery.value === "5"){
+                super_crit_damage = damage*10;
+                average_damage = (
+                    damage*(
+                        1+get_crit_chance(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections,augs)*(0.95*get_crit_damage(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections)+0.45)
+                    )
+                )
+            }
+
+            let rps = (
+                (
+                    get_rps(user_gun.value,Number(user_gun_rarity.value))*(1+0.05*Number(base_core_level.value))*(1+0.1*get_overclocked_level(augs))
+                )/(
+                    1-(get_adrenaline_boost(adrenaline.value)+(get_mastery_rps(user_gun_category,gun_mastery.value)+get_collection_rps(user_gun_category,user_gun_collections)))
+                )
+            );
+            
+            
+
+            let reload_time = (
+                (
+                    (
+                        get_reload(user_gun.value,user_gun_rarity.value)*(1-(0.08+0.04*(get_rm_level(augs)-1)))*(1-get_fast_reload(fast_reload.value))*(1-get_gloves_reload(nimble.value,user_gloves.value,gloves_rarity.value,gcr.checked))*(1-get_helmet_reload(user_helm.value,helmet_rarity.value))
+                    )-(
+                        get_reload(user_gun.value,user_gun_rarity.value)*(get_collection_reload(user_gun_category,user_gun_collections)+get_mastery_reload(user_gun_category,gun_mastery.value)+get_gloves_mastery_reload(gloves_m.value))
+                    )
+                )*(
+                    1-(get_adrenaline_boost(adrenaline.value))
+                )
+            );
+            if(reload_time < get_reload(user_gun.value,user_gun_rarity.value)*0.2){
+                reload_time = get_reload(user_gun.value,user_gun_rarity.value)*0.2;
+            }
+
+            let pure_dps = (
+                (average_damage+dot_damage)*rps
+            );
+
+            let uptime = (
+                (
+                    (get_clip_size(user_gun.value,Number(user_gun_rarity.value),user_gun_category,user_gun_collections,gun_mastery.value,base_core_level.value,augs)-1)/rps
+                )/(
+                    ((get_clip_size(user_gun.value,Number(user_gun_rarity.value),user_gun_category,user_gun_collections,gun_mastery.value,base_core_level.value,augs)-1)/rps)+reload_time
+                )
+            );
+
+            let average_dps_no_cooldowns = (
+                pure_dps*uptime
+            );
+
+            
+            results.innerHTML =
+                `<table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Gun:</td> 
+                            <td>${user_gun.value}</td>
+                            <td>Pure DPS:</td>
+                            <td>${pure_dps}</td>
+                        </tr>
+                        <tr>
+                            <td><span class="additional-information" title="Damage with all buffs except crit.">Base Damage</span>:</td>
+                            <td>${damage}</td>
+                            <td><span class="additional-information" title="Average DPS not including ability cooldowns.">Average DPS</span>:</td>
+                            <td>${average_dps_no_cooldowns}</td>
+                        </tr>
+                        <tr>
+                            <td>Crit Damage: </td>
+                            <td>${crit_damage}<br></td>
+                        </tr>
+                        <tr>
+                            <td>Super Crit Damage: </td>
+                            <td>${super_crit_damage}<br></td>
+                        </tr>
+                        <tr>
+                            <td><span class="additional-information" title="Expected value damage after factoring in crit.">Average Damage</span>: </td>
+                            <td>${average_damage}<br></td>
+                        </tr>
+                        <tr>
+                            <td>Crit Chance: </td>
+                            <td>${get_crit_chance(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections,augs)*100}%<br></td>
+                        </tr>
+                        <tr>
+                            <td>DoT: </td>
+                            <td>${dot_damage}<br></td>
+                        </tr>
+                        <tr>
+                            <td>DoT Per Tick: </td>
+                            <td>${dot_damage_per_tick}<br></td>
+                        </tr>
+                        <tr>
+                            <td>RPS: </td>
+                            <td>${rps}<br></td>
+                        </tr>
+                        <tr>
+                            <td>Base Reload: </td>
+                            <td>${get_reload(user_gun.value,user_gun_rarity.value)}<br></td>
+                        </tr>
+                        <tr>
+                            <td>Reload Time: </td>
+                            <td>${reload_time}<br></td>
+                        </tr>
+                        <tr>
+                            <td>Capacity:</td>
+                            <td>${get_clip_size(user_gun.value,Number(user_gun_rarity.value),user_gun_category,user_gun_collections,gun_mastery.value,base_core_level.value,augs)}</td>
+                        </tr>
+                        <tr>
+                            <td>Uptime:</td>
+                            <td>${uptime}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `;
+
+            /*
+                category ${user_gun_category}<br>
+                Base Damage: ${get_damage(user_gun.value,Number(user_gun_rarity.value))}<br>
+                base core ${0.05*Number(base_core_level.value)}<br>
+                deadly ${0.1*get_deadly_level(augs)}<br>
+                ks ${get_ks_damage(Number(killing_spree.value))}<br>
+                htl ${get_htl_damage(Number(hold_the_line.value))}<br>
+                df ${get_df_damage(Number(deadly_force.value))}<br>
+                mastery ${get_mastery_damage(user_gun_category,gun_mastery.value)}<br>
+                collection ${get_collection_damage(user_gun_category,user_gun_collections)}<br>
+                st ${get_smart_target_damage(Number(st.value))}<br>
+                
+                <p>
+                        ${(1-(0.08+0.04*(get_rm_level(augs)-1)))}<br>
+                        ${(1-get_fast_reload(fast_reload.value))}<br>
+                        ${1-get_gloves_reload(nimble.value,user_gloves.value,gloves_rarity.value,gcr.checked)}<br>
+                        ${(1-get_helmet_reload(user_helm.value,helmet_rarity.value))}<br>
+                        ${get_collection_reload(user_gun_category,user_gun_collections)}<br>
+                        ${get_mastery_reload(user_gun_category,gun_mastery.value)}<br>
+                        ${get_gloves_mastery_reload(gloves_m.value)}<br>
+                        ${(get_adrenaline_boost(adrenaline.value))}<br>
+                    </p>
+
+            results.innerHTML =
+                `Pure DPS: ${pure_dps}<br>
+                Average DPS: ${avg_dps}<br>
+                Time To Kill (WIP): ${ttk}<br><br>
+                Max Damage Per Hit: ${max_dph}<br>
+                Average Damage Per Hit: ${avg_dph}<br>
+                `
+            if(gamemode.value="apocalypse"){
+                results.innerHTML += 
+                    `One Shots ${target} Until Wave (WIP): ${one_shot_wave}<br>`
+            }
+            results.innerHTML +=
+                `<br>Pierce: ${pierce}<br>
+                Movement Penalty: ${movement_pen}<br>`
+            */
+
+        });
+    </script>
+</body>
+</html>

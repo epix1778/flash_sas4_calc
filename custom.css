@@ -1,0 +1,22 @@
+.custom-navbar{
+	background-color: #9f0000;
+}
+.ms-6{
+	margin-left: 4rem !important;
+}
+.site-logo{
+	border: 3px solid black;
+}
+.gun-table{
+	text-align: left;
+}
+.wide-button{
+	width: 500px;
+}
+.results-box{
+	text-align: left;
+}
+.additional-information{
+	text-decoration: underline dotted;
+	cursor: help;
+}
