@@ -1,0 +1,92 @@
+[
+    {
+        "name": "titan_helm",
+        "rarity": "standard",
+        "damage": 0.1
+    },
+    {
+        "name": "titan_helm",
+        "rarity": "red_black",
+        "damage": 0.15
+    },
+    {
+        "name": "dragonfly_helm",
+        "rarity": "standard",
+        "damage": 0.04
+    },
+    {
+        "name": "dragonfly_helm",
+        "rarity": "red_black",
+        "damage": 0.05
+    },
+    {
+        "name": "medusa_helm",
+        "rarity": "standard",
+        "reload_speed": 0.06
+    },
+    {
+        "name": "medusa_helm",
+        "rarity": "red_black",
+        "reload_speed": 0.09
+    },
+    {
+        "name": "hardplate_helm",
+        "rarity": "standard",
+        "reload_speed": -0.05
+    },
+    {
+        "name": "hardplate_helm",
+        "rarity": "red_black",
+        "reload_speed": -0.08
+    },
+    {
+        "name": "titan_gloves",
+        "rarity": "standard",
+        "reload_speed": 0.1
+    },
+    {
+        "name": "titan_gloves",
+        "rarity": "red_black",
+        "reload_speed": 0.15
+    },
+    {
+        "name": "medusa_gloves",
+        "rarity": "standard",
+        "damage": 0.04
+    },
+    {
+        "name": "medusa_gloves",
+        "rarity": "red_black",
+        "damage": 0.05
+    },
+    {
+        "name": "dragonfly_gloves",
+        "rarity": "standard",
+        "reload_speed": 0.03
+    },
+    {
+        "name": "dragonfly_gloves",
+        "rarity": "red_black",
+        "reload_speed": 0.05
+    },
+    {
+        "name": "ronson_gloves",
+        "rarity": "standard",
+        "damage": 0.02
+    },
+    {
+        "name": "ronson_gloves",
+        "rarity": "red_black",
+        "damage": 0.03
+    },
+    {
+        "name": "hardplate_gloves",
+        "rarity": "standard",
+        "reload_speed": -0.05
+    },
+    {
+        "name": "hardplate_gloves",
+        "rarity": "red_black",
+        "reload_speed": -0.1
+    }
+]
