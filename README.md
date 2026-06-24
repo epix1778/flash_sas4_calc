@@ -14,3 +14,6 @@ TO DO LIST/KNOWN ISSUES
         - semi auto fire rates are wrong
         - target system needs to be finished
         - results table needs reformatting
+
+Version 0.1
+- Initial release
