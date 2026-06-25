@@ -1,0 +1,72 @@
+[
+    {
+        "category": "helmet",
+        "crit_chance": 0.01
+    },
+    {
+        "category": "gloves",
+        "reload_speed": 0.1
+    },
+    {
+        "category": "pants",
+        "movement_penalty_reduction": 0.05
+    },
+    {
+        "name": "pistol",
+        "category": 1,
+        "range": 0.2,
+        "reload_speed": 0.05,
+        "reload_speed_requirement": 1
+    },
+    {
+        "name": "assault_rifle",
+        "category": 3,
+        "clip_size_flat": 10,
+        "clip_size_flat_requirement": 0,
+        "damage": 0.05,
+        "damage_requirement": 1,
+        "crit_chance": 0.03
+    },
+    {
+        "name": "shotgun",
+        "category": 4,
+        "damage": 0.05,
+        "damage_requirement": 0,
+        "clip_size_flat": 5,
+        "clip_size_flat_requirement": 1,
+        "pierce": 1
+    },
+    {
+        "name": "sniper",
+        "category": 5,
+        "clip_size_flat": 5,
+        "clip_size_flat_requirement": 0,
+        "crit_damage": 0.1,
+        "damage": 0.05,
+        "damage_requirement": 2
+    },
+    {
+        "name": "smg",
+        "category": 2,
+        "range": 0.2,
+        "rps": 0.05,
+        "damage": 0.1,
+        "damage_requirement": 2
+    },
+    {
+        "name": "rocket_launcher",
+        "category": 6,
+        "radius": 0.05,
+        "reload_speed": 0.05,
+        "reload_speed_requirement": 1,
+        "damage": 0.1,
+        "damage_requirement": 2
+    },
+    {
+        "name": "lmg",
+        "category": 9,
+        "movement_penalty_reduction": 0.05,
+        "clip_size_percent": 0.05,
+        "rps": 0.1
+    }
+]

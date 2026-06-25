@@ -1,0 +1,9 @@
+[
+    {
+        "name": "necrosis",
+        "rarity": "savage",
+        "hp_normal": 5000000,
+        "hp_nightmare": 9000000,
+        "hp_apocalypse": 7500000
+    }
+]
