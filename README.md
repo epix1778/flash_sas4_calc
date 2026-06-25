@@ -25,3 +25,4 @@ Version 0.2
 - Fixed bug with Trident projectile count
 - Resorted guns into categories
 - Fixed semi-auto fire rates
+- Fixed Hornet damage (there are bound to be other damage problems)
