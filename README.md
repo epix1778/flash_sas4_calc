@@ -26,3 +26,4 @@ Version 0.2
 - Resorted guns into categories
 - Fixed semi-auto fire rates
 - Fixed Hornet damage (there are bound to be other damage problems)
+- Removed flamer mastery
