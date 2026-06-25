@@ -6,7 +6,7 @@ TO DO LIST/KNOWN ISSUES
         - my code sucks (unfixable)
         - prem guns/cs guns won't calculate if wrong rarity is selected
         - burst guns are completely wrong atm (doesn't factor in burst count/delay (pls help))
-        - class skills are not factored into average dps calc
+        - class skill cooldowns are not factored into average dps calc
         - max everything buttons don't work anymore
         - need to change dropdowns back to radio buttons
         - capacity calc probably slightly wrong for low capacity pistols w/ mastery
