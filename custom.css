@@ -15,8 +15,15 @@
 }
 .results-box{
 	text-align: left;
+	border: 2px solid black;
 }
 .additional-information{
 	text-decoration: underline dotted;
 	cursor: help;
+}
+.courier-text{
+	font-family: 'Courier New', Courier, monospace;
+}
+.monospaced-text{
+	font-variant-numeric: tabular-nums;
 }

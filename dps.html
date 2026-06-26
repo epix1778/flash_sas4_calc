@@ -337,6 +337,7 @@
                     <td>
                         <button id="25_htl_hg">25 HTL + HG</button>
                     </td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>
@@ -511,6 +512,7 @@
                             <option value="adaptive">Adaptive</option>
                             <option value="pinpoint">Pinpoint</option>
                             <option value="capacity">Capacity</option>
+                            <option value="biosynthesis">Biosynthesis</option>
                             <option value="enlarged">Enlarged</option>
                             <option value="tenacious">Tenacious</option>
                             <option value="skeletonized">Skeletonized</option>
@@ -549,6 +551,7 @@
                             <option value="adaptive">Adaptive</option>
                             <option value="pinpoint">Pinpoint</option>
                             <option value="capacity">Capacity</option>
+                            <option value="biosynthesis">Biosynthesis</option>
                             <option value="enlarged">Enlarged</option>
                             <option value="tenacious">Tenacious</option>
                             <option value="skeletonized">Skeletonized</option>
@@ -591,6 +594,7 @@
                             <option value="adaptive">Adaptive</option>
                             <option value="pinpoint">Pinpoint</option>
                             <option value="capacity">Capacity</option>
+                            <option value="biosynthesis">Biosynthesis</option>
                             <option value="enlarged">Enlarged</option>
                             <option value="tenacious">Tenacious</option>
                             <option value="skeletonized">Skeletonized</option>
@@ -622,6 +626,7 @@
                             <option value="adaptive">Adaptive</option>
                             <option value="pinpoint">Pinpoint</option>
                             <option value="capacity">Capacity</option>
+                            <option value="biosynthesis">Biosynthesis</option>
                             <option value="enlarged">Enlarged</option>
                             <option value="tenacious">Tenacious</option>
                             <option value="skeletonized">Skeletonized</option>
@@ -664,6 +669,10 @@
                             <input type="checkbox" id="red_perk">
                             Killing Machine
                         </label>
+                        <label class="ms-4">
+                            <input type="checkbox" id="boss_target">
+                            Shooting at boss
+                        </label>
                     </td>
                 </tr>
                 <tr>
@@ -678,7 +687,7 @@
         <br>
         <br>
         <br>
-        <div class="container border results-box py-2">
+        <div class="results-box container py-2" style="width: 50%;">
             <h5><b>Results:</b></h5>
             <div id="results"></div>
         </div>
@@ -723,7 +732,9 @@
         - average dps slightly wrong (i don't understand alber)
         - target system needs to be finished
         - results table needs reformatting
+        - results numbers need rounding/commas
         - pinpoint calculated incorrectly (?)
+        - add the rest of the augs
 
         */
         const helm_m = document.getElementById("helmet_mastery");
@@ -776,6 +787,7 @@
         const calculate_button = document.getElementById("calculate_button");
         const results = document.getElementById("results");
         const red_perk = document.getElementById("red_perk");
+        const boss_target = document.getElementById("boss_target");
 
 
         const unique_guns = ["HIKS M1000","CM X-1 Furie","RIA Trident","Handkanone","Bayonet","Planet Stormer Ltd Edition","CM 352 Quasar","HIKS A10","CM 000 Kelvin","Donderbus","Ronson 5X5","RIA 75","HIKS 888 CAW","RIA 8A","RIA 15 SE","CM 467","CM Laser Drill","CM Proton Arc","Ronson WPX Incinerator","Ricochet","Vitriol","Zerfallen","Torment","HIKS S4000","CM 505 Alpha Ltd. Edition","Supermarine Alpha Ltd Edition"]
@@ -1266,7 +1278,11 @@
             const foundWeapon = weaponsData.find(
                 item => item.name === weapon
             );
-            return foundWeapon.projectileCount;
+            count = foundWeapon.projectileCount;
+            if(foundWeapon.category === 4 && gun_mastery.value >= 5){
+                count += 1;
+            }
+            return count;
         }
         
         function get_dot(weapon,rarity){
@@ -1597,6 +1613,21 @@
             return clip_size;
         }
 
+        function get_boss_damage_modifier(weapon,category,mastery_level,target_is_boss){
+            let multi = 1;
+            if(category === 3 && mastery_level >= 3){
+                multi = 1.1;
+            }
+            if(weapon === "Zerfallen"){
+                multi = 0.5;
+            }
+            if(target_is_boss === true){
+                return multi;
+            } else {
+                return 1;
+            }
+        }
+
         calculate_button.addEventListener("click",()=>{
             const user_gun = document.getElementById("gun_name");
             const user_gun_block = weaponsData.filter(
@@ -1630,6 +1661,8 @@
                     1+get_perk_damage(red_perk.checked)
                 )*(
                     get_pellet_count(user_gun.value)
+                )*(
+                    get_boss_damage_modifier(user_gun.value,user_gun_category,gun_mastery.value,boss_target.checked)
                 )
             );
 
@@ -1677,6 +1710,9 @@
                     )
                 )
             }
+            if(!isNaN(super_crit_damage)){
+                super_crit_damage = super_crit_damage.toLocaleString(undefined, {maximumFractionDigits: 2});
+            }
 
             let rps = (
                 (
@@ -1721,63 +1757,89 @@
 
             
             results.innerHTML =
-                `<table class="table table-bordered">
+                `<table class="table table-bordered monospaced-text">
                     <tbody>
                         <tr>
-                            <td>Gun:</td> 
-                            <td>${user_gun.value}</td>
-                            <td>Pure DPS:</td>
-                            <td>${pure_dps}</td>
+                            <th style="width: 50%;">Gun:</th> 
+                            <th style="width: 50%;">${user_gun.value}</th>
                         </tr>
                         <tr>
-                            <td><span class="additional-information" title="Damage with all buffs except crit.">Base Damage</span>:</td>
-                            <td>${damage}</td>
+                            <td>Pure DPS:</td>
+                            <td>${pure_dps.toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
+                        </tr>
+                        <tr>
                             <td><span class="additional-information" title="Average DPS not including ability cooldowns.">Average DPS</span>:</td>
-                            <td>${average_dps_no_cooldowns}</td>
+                            <td>${average_dps_no_cooldowns.toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
+                        </tr>
+                        <tr>
+                            
+                            <td><span class="additional-information" title="Damage per shot with all buffs except crit.">Base Damage</span>:</td>
+                            <td>${damage.toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
+                            
                         </tr>
                         <tr>
                             <td>Crit Damage: </td>
-                            <td>${crit_damage}<br></td>
+                            <td>${crit_damage.toLocaleString(undefined, {maximumFractionDigits: 2})}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>Super Crit Damage: </td>
                             <td>${super_crit_damage}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td><span class="additional-information" title="Expected value damage after factoring in crit.">Average Damage</span>: </td>
-                            <td>${average_damage}<br></td>
+                            <td>${average_damage.toLocaleString(undefined, {maximumFractionDigits: 2})}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>Crit Chance: </td>
-                            <td>${get_crit_chance(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections,augs)*100}%<br></td>
+                            <td>${(get_crit_chance(critical_shot.value,user_gun_category,gun_mastery.value,user_gun_collections,augs)*100).toLocaleString(undefined, {maximumFractionDigits: 2})}%<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>DoT: </td>
-                            <td>${dot_damage}<br></td>
+                            <td>${dot_damage.toLocaleString(undefined, {maximumFractionDigits: 2})}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>DoT Per Tick: </td>
-                            <td>${dot_damage_per_tick}<br></td>
+                            <td>${dot_damage_per_tick.toLocaleString(undefined, {maximumFractionDigits: 2})}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>RPS: </td>
-                            <td>${rps}<br></td>
+                            <td>${rps.toLocaleString(undefined, {maximumFractionDigits: 2})}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>Base Reload: </td>
-                            <td>${get_reload(user_gun.value,user_gun_rarity.value)}<br></td>
+                            <td>${get_reload(user_gun.value,user_gun_rarity.value).toLocaleString(undefined, {maximumFractionDigits: 2})}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>Reload Time: </td>
-                            <td>${reload_time}<br></td>
+                            <td>${reload_time.toLocaleString(undefined, {maximumFractionDigits: 2})}<br></td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>Capacity:</td>
-                            <td>${get_clip_size(user_gun.value,Number(user_gun_rarity.value),user_gun_category,user_gun_collections,gun_mastery.value,base_core_level.value,augs)}</td>
+                            <td>${get_clip_size(user_gun.value,Number(user_gun_rarity.value),user_gun_category,user_gun_collections,gun_mastery.value,base_core_level.value,augs).toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
                         </tr>
                         <tr>
+                            
+                            
                             <td>Uptime:</td>
-                            <td>${uptime}</td>
+                            <td>${(uptime*100).toLocaleString(undefined, {maximumFractionDigits: 2})}%</td>
                         </tr>
                     </tbody>
                 </table>
