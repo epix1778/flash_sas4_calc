@@ -30,3 +30,6 @@ Version 0.3
 - Updated results formatting greatly
 - Fixed T5 shotgun mastery not contributing to calculations
 - Added temporary boss target checkmark for T3 AR mastery/Zerfallen half damage
+
+Version 0.3.1
+- Added pellet count multiplier to DoT
