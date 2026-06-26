@@ -1685,15 +1685,7 @@
 
             let dot_damage_per_tick = (
                 (
-                    (
-                        (
-                            get_dot(user_gun.value,Number(user_gun_rarity.value))*(1+0.05*Number(base_core_level.value))*(1+0.1*get_tenacious_level(augs))
-                        )*(
-                            1+get_ks_damage(Number(killing_spree.value))+get_htl_damage(Number(hold_the_line.value))+get_df_damage(Number(deadly_force.value))+get_mastery_damage(user_gun_category,gun_mastery.value)+get_collection_damage(user_gun_category,user_gun_collections)+get_smart_target_damage(Number(st.value))+get_helmet_damage(user_helm.value,user_helm_rarity.value,Number(helm_m.value))+get_gloves_damage(user_gloves.value,user_gloves_rarity.value,Number(gloves_m.value))
-                        )
-                    )*(
-                        1+get_perk_damage(red_perk.checked)
-                    )
+                    dot_damage
                 )/(
                     get_dot_duration(user_gun.value,Number(user_gun_rarity.value))
                 )
