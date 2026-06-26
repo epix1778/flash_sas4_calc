@@ -27,3 +27,8 @@ Version 0.2
 - Fixed semi-auto fire rates
 - Fixed Hornet damage (there are bound to be other damage problems)
 - Removed flamer mastery
+
+Version 0.3
+- Updated results formatting greatly
+- Fixed T5 shotgun mastery not contributing to calculations
+- Added temporary boss target checkmark for T3 AR mastery/Zerfallen half damage
