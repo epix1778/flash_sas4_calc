@@ -11,8 +11,6 @@ TO DO LIST/KNOWN ISSUES
         - capacity calc probably slightly wrong for low capacity pistols w/ mastery
         - average dps slightly wrong (i don't understand alber)
         - target system needs to be finished
-        - results table needs reformatting
-        - results numbers need rounding/commas
         - pinpoint calculated incorrectly (?)
 
 Version 0.1
