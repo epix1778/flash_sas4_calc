@@ -656,7 +656,7 @@
                         <select id="elite_type">
                             <option value="not_elite" selected>----------</option>
                             <option value="elite_other">Elite (other)</option>
-                            <option value="chitinous_hide">Elite (Chitinous Hide)</option>
+                            <option value="chitinous_hide">Elite (Berserk)</option>
                         </select>
                         <p>in</p>
                         <select id="gamemode">
@@ -727,14 +727,13 @@
         - prem guns/cs guns won't calculate if wrong rarity is selected
         - burst guns are completely wrong atm (doesn't factor in burst count/delay (pls help))
         - class skills cooldowns are not factored into average dps calc
-        - need to change dropdowns back to radio buttons
+        - need to change dropdowns back to radio buttons?
         - capacity calc probably slightly wrong for low capacity pistols w/ mastery
         - average dps slightly wrong (i don't understand alber)
         - target system needs to be finished
-        - results table needs reformatting
-        - results numbers need rounding/commas
         - pinpoint calculated incorrectly (?)
-        - add the rest of the augs
+        - move results table to right side of screen
+        - add remaining features: one shots until wave x, one clips until wave x, pierce, shielder dps, ttk, screenshot feature?, movement penalty
 
         */
         const helm_m = document.getElementById("helmet_mastery");
@@ -788,6 +787,10 @@
         const results = document.getElementById("results");
         const red_perk = document.getElementById("red_perk");
         const boss_target = document.getElementById("boss_target");
+        const enemy_rarity = document.getElementById("enemy_rarity");
+        const enemy_type = document.getElementById("enemy_type");
+        const elite_type = document.getElementById("elite_type");
+        const gamemode = document.getElementById("gamemode");
 
 
         const unique_guns = ["HIKS M1000","CM X-1 Furie","RIA Trident","Handkanone","Bayonet","Planet Stormer Ltd Edition","CM 352 Quasar","HIKS A10","CM 000 Kelvin","Donderbus","Ronson 5X5","RIA 75","HIKS 888 CAW","RIA 8A","RIA 15 SE","CM 467","CM Laser Drill","CM Proton Arc","Ronson WPX Incinerator","Ricochet","Vitriol","Zerfallen","Torment","HIKS S4000","CM 505 Alpha Ltd. Edition","Supermarine Alpha Ltd Edition"]
@@ -1628,6 +1631,63 @@
             }
         }
 
+        function get_target_hp(enemy,rarity,elite,gamemode){
+            let hp = 0;
+            if(enemy === "necrosis" && rarity === "savage"){
+                hp = 5000000;
+                if(elite !== "not_elite"){
+                    if(gamemode === "nightmare"){
+                        hp = 9000000;
+                    } else if(gamemode === "apocalypse"){
+                        hp = 7500000;
+                    }
+                }
+            }
+            return hp;
+        }
+
+        function get_target_ehp(hp,gun,gun_block,augs){
+            let ehp = 0;
+            if(hp !== 0){
+                let resistance_modifier = 0;
+                if(gun_block.damageType === 3){
+                    resistance_modifier = 0.5;
+                }
+                if(augs.includes("adaptive")){
+                    const index = augs.indexOf("adaptive");
+                    const grade = augs[index+4];
+                    const adaptive = augmentData.find(
+                        item => item.name === "adaptive"
+                    );
+                    resistance_modifier -= adaptive[grade];
+                }
+                ehp = hp/(1-resistance_modifier);
+            }
+            return ehp;
+        }
+
+        function get_ttk(hp,dmg,mag,reload,rps){
+            if(hp === 0){
+                return "This version of the TTK calculator does not support anything besides Savage Necrosis Elites.";
+            } else {
+                let total_time = 0;
+
+                let shots_to_kill = hp/dmg;
+
+                let reloads = shots_to_kill/mag;
+                if(reloads > 1){
+                    total_time += Math.floor(reloads)*reload;
+                }
+                
+                let time_for_shots_to_kill = shots_to_kill/rps;
+                total_time += time_for_shots_to_kill;
+
+                return total_time;
+            }
+        }
+
+
+
         calculate_button.addEventListener("click",()=>{
             const user_gun = document.getElementById("gun_name");
             const user_gun_block = weaponsData.filter(
@@ -1733,6 +1793,8 @@
                 reload_time = get_reload(user_gun.value,user_gun_rarity.value)*0.2;
             }
 
+            let clip_size = get_clip_size(user_gun.value,Number(user_gun_rarity.value),user_gun_category,user_gun_collections,gun_mastery.value,base_core_level.value,augs);
+
             let pure_dps = (
                 (average_damage+dot_damage)*rps
             );
@@ -1748,6 +1810,10 @@
             let average_dps_no_cooldowns = (
                 pure_dps*uptime
             );
+            
+            let target_hp = get_target_hp(enemy_type.value,enemy_rarity.value,elite_type.value,gamemode.value)
+            let target_ehp = get_target_ehp(target_hp,user_gun.value,user_gun_block,augs);
+            let ttk = get_ttk(target_ehp,average_damage,clip_size,reload_time,rps);
 
             
             results.innerHTML =
@@ -1826,7 +1892,7 @@
                         <tr>
                             
                             
-                            <td>Capacity:</td>
+                            <td><span class="additional-information" title="Capacity can vary by 1. Decimal is left for clarification.">Capacity</span>:</td>
                             <td>${get_clip_size(user_gun.value,Number(user_gun_rarity.value),user_gun_category,user_gun_collections,gun_mastery.value,base_core_level.value,augs).toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
                         </tr>
                         <tr>
@@ -1834,6 +1900,17 @@
                             
                             <td>Uptime:</td>
                             <td>${(uptime*100).toLocaleString(undefined, {maximumFractionDigits: 2})}%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered monospaced-text">
+                    <tbody>
+                        <tr class="text-center">
+                            <th colspan="2">TTK Info</th>                            
+                        </tr>
+                        <tr>
+                            <td style="width: 50%;">TTK (seconds)</td>
+                            <td style="width: 50%;">${ttk.toLocaleString(undefined, {maximumFractionDigits: 4})}</td>
                         </tr>
                     </tbody>
                 </table>
