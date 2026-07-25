@@ -723,17 +723,20 @@
 
         TO DO LIST/KNOWN ISSUES
 
-        - my code sucks (unfixable)
-        - prem guns/cs guns won't calculate if wrong rarity is selected
-        - burst guns are completely wrong atm (doesn't factor in burst count/delay (pls help))
-        - class skills cooldowns are not factored into average dps calc
-        - need to change dropdowns back to radio buttons?
-        - capacity calc probably slightly wrong for low capacity pistols w/ mastery
-        - average dps slightly wrong (i don't understand alber)
-        - target system needs to be finished
-        - pinpoint calculated incorrectly (?)
-        - move results table to right side of screen
-        - add remaining features: one shots until wave x, one clips until wave x, pierce, shielder dps, ttk, screenshot feature?, movement penalty
+            - my code sucks (unfixable)
+            - prem guns/cs guns won't calculate if wrong rarity is selected
+            - burst guns are completely wrong atm (doesn't factor in burst count/delay (will fix this eventually))
+            - class skills cooldowns are not factored into average dps calc
+            - need to change dropdowns back to radio buttons?
+            - capacity calc probably slightly wrong for low capacity pistols w/ mastery
+            - average dps slightly wrong (i don't understand alber)
+            - target system needs to be finished
+            - pinpoint calculated incorrectly (?)
+            - move results table to right side of screen
+            - add remaining features: one shots until wave x, one clips until wave x, pierce, shielder dps, finish ttk, screenshot feature?, movement penalty, range slider/visualizer?
+            - bcb and mastery adaptives do not affect target ehp yet
+            - class skill cooldowns are not factored into ttk calc
+            - need to make it so selecting a boss target automatically assumes shooting at boss
 
         */
         const helm_m = document.getElementById("helmet_mastery");
@@ -1612,6 +1615,10 @@
             }
 
             clip_size += conglomerate_2;
+
+            if(weapon === "Zerfallen"){
+                clip_size = Math.ceil(clip_size);
+            }
 
             return clip_size;
         }
