@@ -14,6 +14,7 @@ TO DO LIST/KNOWN ISSUES
         - pinpoint calculated incorrectly (?)
         - move results table to right side of screen
         - add remaining features: one shots until wave x, one clips until wave x, pierce, shielder dps, finish ttk, screenshot feature?, movement penalty
+        - bcb and mastery adaptives do not affect target ehp yet
 
 Version 0.1
 - Initial release
