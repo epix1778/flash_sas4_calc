@@ -5,13 +5,15 @@ TO DO LIST/KNOWN ISSUES
 
         - my code sucks (unfixable)
         - prem guns/cs guns won't calculate if wrong rarity is selected
-        - burst guns are completely wrong atm (doesn't factor in burst count/delay (pls help))
+        - burst guns are completely wrong atm (doesn't factor in burst count/delay (will fix this eventually))
         - class skills cooldowns are not factored into average dps calc
-        - need to change dropdowns back to radio buttons
+        - need to change dropdowns back to radio buttons?
         - capacity calc probably slightly wrong for low capacity pistols w/ mastery
         - average dps slightly wrong (i don't understand alber)
         - target system needs to be finished
         - pinpoint calculated incorrectly (?)
+        - move results table to right side of screen
+        - add remaining features: one shots until wave x, one clips until wave x, pierce, shielder dps, finish ttk, screenshot feature?, movement penalty
 
 Version 0.1
 - Initial release
