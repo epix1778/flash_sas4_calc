@@ -33,3 +33,6 @@ Version 0.3
 
 Version 0.3.1
 - Added pellet count multiplier to DoT
+
+Version 0.4
+- Added TTK calc for SNEs (will add other enemies + more ttk info later)
