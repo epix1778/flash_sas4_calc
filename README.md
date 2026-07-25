@@ -41,3 +41,6 @@ Version 0.3.1
 
 Version 0.4
 - Added TTK calc for SNEs (will add other enemies + more ttk info later)
+
+Version 0.4.1
+- Fixed Zerfallen capacity bug
