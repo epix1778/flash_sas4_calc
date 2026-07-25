@@ -16,7 +16,7 @@ TO DO LIST/KNOWN ISSUES
         - add remaining features: one shots until wave x, one clips until wave x, pierce, shielder dps, finish ttk, screenshot feature?, movement penalty, range slider/visualizer?
         - bcb and mastery adaptives do not affect target ehp yet
         - class skill cooldowns are not factored into ttk calc
-        - zerfallen capacity bugged
+        - need to make it so selecting a boss target automatically assumes shooting at boss
 
 Version 0.1
 - Initial release
