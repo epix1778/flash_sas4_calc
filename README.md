@@ -18,6 +18,7 @@ TO DO LIST/KNOWN ISSUES
         - class skill cooldowns are not factored into ttk calc
         - need to make it so selecting a boss target automatically assumes shooting at boss
         - add min/max ttk?
+        - add wallbang option for zerf (since ttk is wrong (isn't it just 2x dps since crits are tied to each?))
 
 Version 0.1
 - Initial release
