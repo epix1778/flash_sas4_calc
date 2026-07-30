@@ -9,704 +9,705 @@
 	<link rel="stylesheet" href="custom.css">
 </head>
 <body>
-	<header>
-    <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-        <div class="container-fluid">
-            <a href="index.html"><img src="sas4_icon.jpg" alt="Site Logo" height="40" class="site-logo rounded"></a>
-            <div class="container mx-1">
-            <h2 style="color:white">Flash SAS4 Calculators</h2>
+    <div class="site-container">
+        <header>
+        <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+            <div class="container-fluid">
+                <a href="index.html"><img src="sas4_icon.jpg" alt="Site Logo" height="40" class="site-logo rounded"></a>
+                <div class="container mx-1">
+                <h2 style="color:white">Flash SAS4 Calculators</h2>
+                </div>
+
+                <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Main Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="dps.html">DPS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="armor.html">Armor</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+        </header>
 
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <div class="container-fluid text-center mt-5 px-6">
+            <div class="row">
+                <div class="col-8">
+                    <table class="table table-bordered" id="armor_table">
+                        <thead>
+                            <tr>
+                                <th>Armor Slot</th>
+                                <th>Mastery Level</th>
+                                <th>Collections</th>
+                                <th>Augments</th>
+                                <th>Armor Piece</th>
+                                <th>Rarity</th>
+                            <tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Helmet<br>
+                                    <div class="container mt-2">
+                                        <img src="sprites/helm.png" alt="Helmet Icon" height="40">
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" id="helmet_mastery" class="form-control-sm" min="0" max="5" value="0">
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" id="helmet_collection_standard">
+                                        Standard
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="smart_target" class="form-control-sm" min="0" max="12" value="0">
+                                        Smart Target
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="number" id="target_assist" class="form-control-sm" min="0" max="12" value="0">
+                                        Target Assist
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="helm">
+                                        <option value="titan_helm">Titan</option>
+                                        <option value="dragonfly_helm">Dragonfly</option>
+                                        <option value="medusa_helm">Medusa</option>
+                                        <option value="hardplate_helm">Hardplate</option>
+                                        <option value="other_helm" selected>Other</option>
+                                    </select>
+                                    <!--
+                                    <label>
+                                        <input type="radio" id="helm" name="helm" value="titan_helm">
+                                        Titan
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="helm" name="helm" value="dragonfly_helm">
+                                        Dragonfly
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="helm" name="helm" value="medusa_helm">
+                                        Medusa
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="helm" name="helm" value="hardplate_helm">
+                                        Hardplate
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="helm" name="helm" value="other_helm">
+                                        Other
+                                    </label>
+                                    -->
+                                </td>
+                                <td>
+                                    <select id="helmet_rarity">
+                                        <option value="standard" selected>Standard</option>
+                                        <option value="red_black">Red/Black</option>
+                                    </select>
+                                    <!--
+                                    <label>
+                                        <input type="radio" name="helmet_rarity" value="standard" id="helmet_rarity">
+                                        Standard
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" name="helmet_rarity" value="red_black" id="helmet_rarity">
+                                        Red/Black
+                                    </label>
+                                    -->
+                                </td>
+                            </tr>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Main Page</a>
-                    </li>
-					<li class="nav-item">
-						<a class="nav-link active" href="dps.html">DPS</a>
-					</li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="armor.html">Armor</a>
-                    </li>
-                </ul>
+
+
+                            <tr>
+                                <td>
+                                    Gloves<br>
+                                    <div class="container mt-2">
+                                        <img src="sprites/gloves.png" alt="Gloves Icon" height="40">
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="number" id="gloves_mastery" class="form-control-sm" min="0" max="5" value="0">
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" id="gloves_collection_red">
+                                        Red
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="nimble" class="form-control-sm" min="0" max="12" value="0">
+                                        Nimble
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="gloves">
+                                        <option value="titan_gloves">Titan</option>
+                                        <option value="medusa_gloves">Medusa</option>
+                                        <option value="dragonfly_gloves">Dragonfly</option>
+                                        <option value="ronson_gloves">Ronson</option>
+                                        <option value="hardplate_gloves">Hardplate</option>
+                                        <option value="other_gloves" selected>Other</option>
+                                    </select>
+
+                                    <!--
+                                    <label>
+                                        <input type="radio" id="gloves" name="gloves" value="titan_gloves">
+                                        Titan
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="gloves" name="gloves" value="medusa_gloves">
+                                        Medusa
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="gloves" name="gloves" value="dragonfly_gloves">
+                                        Dragonfly
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="gloves" name="gloves" value="ronson_gloves">
+                                        Ronson
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="gloves" name="gloves" value="hardplate_gloves">
+                                        Hardplate
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" id="gloves" name="gloves" value="other_gloves">
+                                        Other
+                                    </label>
+                                    -->
+                                </td>
+                                <td>
+                                    <select id="gloves_rarity">
+                                        <option value="standard" selected>Standard</option>
+                                        <option value="red_black">Red/Black</option>
+                                    </select>
+
+                                    <!--
+                                    <label>
+                                        <input type="radio" name="gloves_rarity" value="standard" id="gloves_rarity">
+                                        Standard
+                                    </label>
+                                    <br>
+                                    <label>
+                                        <input type="radio" name="gloves_rarity" value="red_black" id="gloves_rarity">
+                                        Red/Black
+                                    </label>
+                                    -->
+                                </td>
+                            </tr>
+
+
+
+                            <tr>
+                                <td>
+                                    Pants<br>
+                                    <div class="container mt-2">
+                                        <img src="sprites/pants.png" alt="Pants Icon" height="40">
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>-</p>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" id="pants_collection_standard">
+                                        Standard
+                                    </label>
+                                </td>
+                                <td>
+                                    <p>-</p>
+                                </td>
+                                <td>
+                                    <p>-</p>
+                                </td>
+                                <td>
+                                    <p>-</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    <button id="max_armor_button"><b>Max Everything</b></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>All Class Skills</th>
+                            <th>Assault Skills</th>
+                            <th>Heavy Skills</th>
+                            <th>Medic Skills</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="number" id="fast_reload" class="form-control-sm" min="0" max="25" value="0">
+                                        Fast Reload
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="adrenaline" class="form-control-sm" min="0" max="25" value="0">
+                                        Adrenaline
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="hold_the_line" class="form-control-sm" min="0" max="25" value="0">
+                                        Hold The Line
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="biocleanse_bomb" class="form-control-sm" min="0" max="25" value="0">
+                                        Biocleanse Bomb
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        <input type="number" id="critical_shot" class="form-control-sm" min="0" max="25" value="0">
+                                        Critical Shot
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="killing_spree" class="form-control-sm" min="0" max="25" value="0">
+                                        Killing Spree
+                                    </label>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="heavy_gear" class="form-control-sm" min="0" max="25" value="0">
+                                        Heavy Gear
+                                    </label>
+                                </td>
+                                <td>
+                                    <button id="25_bcb">25 BCB</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button id="11_fast_reload">11 Fast Reload</button>
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="deadly_force" class="form-control-sm" min="0" max="25" value="0">
+                                        Deadly Force
+                                    </label>
+                                </td>
+                                <td><button id="25_htl">25 HTL</button></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button id="25_critical_shot">25 Critical Shot</button>
+                                </td>
+                                <td>
+                                    <button id="25_ks_adr">25 ADR + KS</button>
+                                </td>
+                                <td>
+                                    <button id="25_htl_hg">25 HTL + HG</button>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="gun-table table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="gun_name">
+                                        Gun
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="gun_name">
+                                        <option value="no_gun" selected>----------</option>
+                                        <optgroup label="Pistols">
+                                            <option value="HVM 001">HVM 001</option>
+                                            <option value="CM 202">CM 202</option>
+                                            <option value="RIA 313">RIA 313</option>
+                                            <option value="Sabre">Sabre</option>
+                                            <option value="RIA 1010">RIA 1010</option>
+                                            <option value="Poison Claw">Poison Claw</option>
+                                            <option value="CM 205">CM 205</option>
+                                            <option value="Trailblazer">Trailblazer</option>
+                                            <option value="CM 225">CM 225</option>
+                                            <option value="Handkanone">Handkanone</option>
+                                            <option value="Ronson 45">Ronson 45</option>
+                                            <option value="Mustang">Mustang</option>
+                                        </optgroup>
+                                        <optgroup label="Assault Rifles">
+                                            <option value="Z-1 Assault">Z-1 Assault</option>
+                                            <option value="HVM 005 G-Class">HVM 005 G-Class</option>
+                                            <option value="RIA 20 DSC">RIA 20 DSC</option>
+                                            <option value="RIA 20 Para">RIA 20 Para</option>
+                                            <option value="RIA 20 Striker">RIA 20 Striker</option>
+                                            <option value="Raptor">Raptor</option>
+                                            <option value="CM 440 Titan">CM 440 Titan</option>
+                                            <option value="Heartburn">Heartburn</option>
+                                            <option value="CM 401 Planet Stormer">CM 401 Planet Stormer</option>
+                                            <option value="CM Gigavolt">CM Gigavolt</option>
+                                            <option value="Ronson 65-a">Ronson 65-a</option>
+                                            <option value="Bayonet">Bayonet</option>
+                                            <option value="Planet Stormer Ltd Edition">Planet Stormer Ltd Edition</option>
+                                            <option value="Ronson 70">Ronson 70</option>
+                                            <option value="CM 451 Starburst">CM 451 Starburst</option>
+                                            <option value="Hard Thorn">Hard Thorn</option>
+                                            <option value="Mixmaster">Mixmaster</option>
+                                            <option value="Sub-light COM2">Sub-light COM2</option>
+                                            <option value="CM 352 Quasar">CM 352 Quasar</option>
+                                            <option value="CM 000 Kelvin">CM 000 Kelvin</option>
+                                            <option value="HIKS A10">HIKS A10</option>
+                                            <option value="RIA Trident">RIA Trident</option>
+                                        </optgroup>
+                                        <optgroup label="Shotguns">
+                                            <option value="HVM 004">HVM 004</option>
+                                            <option value="RIA 30 Strikeforce">RIA 30 Strikeforce</option>
+                                            <option value="Stripper">Stripper</option>
+                                            <option value="Donderbus">Donderbus</option>
+                                            <option value="Shotlite Tempest">Shotlite Tempest</option>
+                                            <option value="Shockfield">1887 Shockfield</option>
+                                            <option value="Ronson 5X5">Ronson 5X5</option>
+                                        </optgroup>
+                                        <optgroup label="Sniper Rifles">
+                                            <option value="RIA 50">RIA 50</option>
+                                            <option value="CM 800 Jupiter">CM 800 Jupiter</option>
+                                            <option value="HIKS S300">HIKS S300</option>
+                                            <option value="Hornet">Hornet</option>
+                                            <option value="RIA 75">RIA 75</option>
+                                            <option value="HIKS 888 CAW">HIKS 888 CAW</option>
+                                        </optgroup>
+                                        <optgroup label="SMGs">
+                                            <option value="Z-2 LMP">Z-2 LMP</option>
+                                            <option value="RIA 7">RIA 7</option>
+                                            <option value="HVM 002">HVM 002</option>
+                                            <option value="CM 330">CM 330</option>
+                                            <option value="Phantom">Phantom</option>
+                                            <option value="RIA T7">RIA T7</option>
+                                            <option value="CM 307">CM 307</option>
+                                            <option value="CM 351 Sunflare">CM 351 Sunflare</option>
+                                            <option value="RIA 8A">RIA 8A</option>
+                                            <option value="Ronson 50">Ronson 50</option>
+                                            <option value="Ronson 55">Ronson 55</option>
+                                            <option value="RIA 15 SE">RIA 15 SE</option>
+                                            <option value="CM 467">CM 467</option>
+                                        </optgroup>
+                                        <optgroup label="Lasers">
+                                            <option value="Hotspot">Hotspot</option>
+                                            <option value="CM Laser Drill">CM Laser Drill</option>
+                                            <option value="CM Proton Arc">CM Proton Arc</option>
+                                        </optgroup>
+                                        <optgroup label="Flame Throwers">
+                                            <option value="Ronson WP Flamethrower">Ronson WP Flamethrower</option>
+                                            <option value="Ronson WPX Incinerator">Ronson WPX Incinerator</option>
+                                        </optgroup>
+                                        <optgroup label="Disc Throwers">
+                                            <option value="Ricochet">Ricochet</option>
+                                            <option value="Shredder">Shredder</option>
+                                        </optgroup>
+                                        <optgroup label="Rocket Launchers">
+                                            <option value="HVM MPG">HVM MPG</option>
+                                            <option value="T-101 Feldhaubitz">T-101 Feldhaubitz</option>
+                                            <option value="Lone Star">Lone Star</option>
+                                            <option value="Vitriol">Vitriol</option>
+                                            <option value="Gebirgskanone">Gebirgskanone</option>
+                                            <option value="T-102 Jagdfaust">T-102 Jagdfaust</option>
+                                            <option value="Luftplatzen">Luftplatzen</option>
+                                            <option value="HIKS 3100">HIKS 3100</option>
+                                            <option value="Zerfallen">Zerfallen</option>
+                                            <option value="Torment">Torment</option>
+                                            <option value="HIKS S4000">HIKS S4000</option>
+                                            <option value="CM X-1 Furie">CM X-1 Furie</option>
+                                        </optgroup>
+                                        <optgroup label="LMGs">
+                                            <option value="Z-5 Heavy">Z-5 Heavy</option>
+                                            <option value="HVM 008">HVM 008</option>
+                                            <option value="Ronson LBM">Ronson LBM</option>
+                                            <option value="RIA 40">RIA 40</option>
+                                            <option value="RIA 45 Para">RIA 45 Para</option>
+                                            <option value="CM 505">CM 505</option>
+                                            <option value="CM 530 BabyCOM">CM 530 BabyCOM</option>
+                                            <option value="Tombstone">Tombstone</option>
+                                            <option value="Proposition">Proposition</option>
+                                            <option value="RIA T40">RIA T40</option>
+                                            <option value="Supermarine">Supermarine</option>
+                                            <option value="CM 505 Alpha Ltd. Edition">CM 505 Alpha Ltd. Edition</option>
+                                            <option value="Supermarine Alpha Ltd Edition">Supermarine Alpha Ltd. Edition</option>
+                                            <option value="HIKS M1000">HIKS M1000</option>
+                                        </optgroup>  
+                                    </select>
+                                </td>
+                                <td>
+                                    <label>
+                                        Rarity
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="gun_rarity">
+                                        <option value="0">Standard</option>
+                                        <option value="1">Red</option>
+                                        <option value="2">Black</option>
+                                    </select>
+                                    <!-- 
+                                    <label>
+                                        <input type="radio" name="gun_rarity" value="0" id="gun_rarity">
+                                        Standard
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gun_rarity" value="1" id="gun_rarity">
+                                        Red
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="gun_rarity" value="2" id="gun_rarity">
+                                        Black
+                                    </label>
+                                    -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Augment 1
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="augment_1">
+                                        <option value="no_aug" selected>----------</option>
+                                        <option value="deadly">Deadly</option>
+                                        <option value="overclocked">Overclocked</option>
+                                        <option value="adaptive">Adaptive</option>
+                                        <option value="pinpoint">Pinpoint</option>
+                                        <option value="capacity">Capacity</option>
+                                        <option value="biosynthesis">Biosynthesis</option>
+                                        <option value="enlarged">Enlarged</option>
+                                        <option value="tenacious">Tenacious</option>
+                                        <option value="skeletonized">Skeletonized</option>
+                                        <option value="piercing">Piercing</option>
+                                        <option value="race_modded">Race Modded</option>
+                                    </select>
+                                    <input type="number" id="augment_1_level" min="0" max="12" value="0">
+                                    <button id="augment_1_grade_12">Grade 12</button>
+                                    <button id="augment_1_grade_10">Grade 10</button>
+                                </td>
+                                <td>
+                                    Masteries
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="number" id="gun_mastery" min="0" max="5" value="0">
+                                        Gun
+                                    </label>
+                                    <label class="ms-4">
+                                        <input type="number" id="ammo_mastery" min="0" max="5" value="0">
+                                        HDA
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Augment 2
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="augment_2">
+                                        <option value="no_gun" selected>----------</option>
+                                        <option value="deadly">Deadly</option>
+                                        <option value="overclocked">Overclocked</option>
+                                        <option value="adaptive">Adaptive</option>
+                                        <option value="pinpoint">Pinpoint</option>
+                                        <option value="capacity">Capacity</option>
+                                        <option value="biosynthesis">Biosynthesis</option>
+                                        <option value="enlarged">Enlarged</option>
+                                        <option value="tenacious">Tenacious</option>
+                                        <option value="skeletonized">Skeletonized</option>
+                                        <option value="piercing">Piercing</option>
+                                        <option value="race_modded">Race Modded</option>
+                                    </select>
+                                    <input type="number" id="augment_2_level" min="0" max="12" value="0">
+                                    <button id="augment_2_grade_12">Grade 12</button>
+                                    <button id="augment_2_grade_10">Grade 10</button>
+                                </td>
+                                <td>
+                                    Collections
+                                </td>
+                                <td>
+                                    <label>
+                                        <input type="checkbox" id="standard_gun_collection">
+                                        Standard
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="red_gun_collection">
+                                        Red
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="black_gun_collection">
+                                        Black
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Augment 3
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="augment_3">
+                                        <option value="no_gun" selected>----------</option>
+                                        <option value="deadly">Deadly</option>
+                                        <option value="overclocked">Overclocked</option>
+                                        <option value="adaptive">Adaptive</option>
+                                        <option value="pinpoint">Pinpoint</option>
+                                        <option value="capacity">Capacity</option>
+                                        <option value="biosynthesis">Biosynthesis</option>
+                                        <option value="enlarged">Enlarged</option>
+                                        <option value="tenacious">Tenacious</option>
+                                        <option value="skeletonized">Skeletonized</option>
+                                        <option value="piercing">Piercing</option>
+                                        <option value="race_modded">Race Modded</option>
+                                    </select>
+                                    <input type="number" id="augment_3_level" min="0" max="12" value="0">
+                                    <button id="augment_3_grade_12">Grade 12</button>
+                                    <button id="augment_3_grade_10">Grade 10</button>
+                                </td>
+                                <td>
+                                    Base Cores
+                                </td>
+                                <td>
+                                    <input type="number" id="weapon_base_cores" min="0" max="11" value="0">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>
+                                        Augment 4
+                                    </label>
+                                </td>
+                                <td>
+                                    <select id="augment_4">
+                                        <option value="no_gun" selected>----------</option>
+                                        <option value="deadly">Deadly</option>
+                                        <option value="overclocked">Overclocked</option>
+                                        <option value="adaptive">Adaptive</option>
+                                        <option value="pinpoint">Pinpoint</option>
+                                        <option value="capacity">Capacity</option>
+                                        <option value="biosynthesis">Biosynthesis</option>
+                                        <option value="enlarged">Enlarged</option>
+                                        <option value="tenacious">Tenacious</option>
+                                        <option value="skeletonized">Skeletonized</option>
+                                        <option value="piercing">Piercing</option>
+                                        <option value="race_modded">Race Modded</option>
+                                    </select>
+                                    <input type="number" id="augment_4_level" min="0" max="12" value="0">
+                                    <button id="augment_4_grade_12">Grade 12</button>
+                                    <button id="augment_4_grade_10">Grade 10</button>
+                                </td>
+                                <td>
+                                    Target
+                                </td>
+                                <td>
+                                    <select id="enemy_rarity">
+                                        <option value="no_rarity" selected>----------</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="fetid">Fetid</option>
+                                        <option value="evolved">Evolved</option>
+                                        <option value="apex">Apex</option>
+                                        <option value="savage">Savage</option>
+                                    </select>
+                                    <select id="enemy_type">
+                                        <option value="no_enemy" selected>----------</option>
+                                        <option value="necrosis">Necrosis</option>
+                                    </select>
+                                    <select id="elite_type">
+                                        <option value="not_elite" selected>----------</option>
+                                        <option value="elite_other">Elite (other)</option>
+                                        <option value="chitinous_hide">Elite (Berserk)</option>
+                                    </select>
+                                    <p>in</p>
+                                    <select id="gamemode">
+                                        <option value="no_mode" selected>----------</option>
+                                        <option value="normal_mode">Normal</option>
+                                        <option value="nightmare">Nightmare</option>
+                                        <option value="apocalypse">Apocalypse</option>
+                                    </select>
+                                    <label class="ms-5">
+                                        <input type="checkbox" id="red_perk">
+                                        Killing Machine
+                                    </label>
+                                    <label class="ms-4">
+                                        <input type="checkbox" id="boss_target">
+                                        Shooting at boss
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4" class="text-center">
+                                    <button id="max_weapon_button"><b>Max Everything</b></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <button class="btn btn-success wide-button" id="calculate_button">Calculate!</button>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-4">
+                    <div class="results-box container py-2" style="width: 100%;">
+                        <h5><b>Results:</b></h5>
+                        <div id="results"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </div>
         </div>
-    </nav>
-	</header>
-
-	<div class="container text-center mt-5">
-		<table class="table table-bordered" id="armor_table">
-			<thead>
-				<tr>
-					<th>Armor Slot</th>
-					<th>Mastery Level</th>
-					<th>Collections</th>
-					<th>Augments</th>
-					<th>Armor Piece</th>
-					<th>Rarity</th>
-				<tr>
-			</thead>
-			<tbody>
-                <tr>
-					<td>
-                        Helmet<br>
-                        <div class="container mt-4">
-                            <img src="sprites/helm.png" alt="Helmet Icon" height="40">
-                        </div>
-                    </td>
-                    <td>
-                        <input type="number" id="helmet_mastery" class="form-control-sm" min="0" max="5" value="0">
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" id="helmet_collection_standard">
-                            Standard
-                        </label>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="smart_target" class="form-control-sm" min="0" max="12" value="0">
-                            Smart Target
-                        </label>
-                        <br>
-                        <label>
-                            <input type="number" id="target_assist" class="form-control-sm" min="0" max="12" value="0">
-                            Target Assist
-                        </label>
-                    </td>
-                    <td>
-                        <select id="helm">
-                            <option value="titan_helm">Titan</option>
-                            <option value="dragonfly_helm">Dragonfly</option>
-                            <option value="medusa_helm">Medusa</option>
-                            <option value="hardplate_helm">Hardplate</option>
-                            <option value="other_helm" selected>Other</option>
-                        </select>
-                        <!--
-                        <label>
-                            <input type="radio" id="helm" name="helm" value="titan_helm">
-                            Titan
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="helm" name="helm" value="dragonfly_helm">
-                            Dragonfly
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="helm" name="helm" value="medusa_helm">
-                            Medusa
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="helm" name="helm" value="hardplate_helm">
-                            Hardplate
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="helm" name="helm" value="other_helm">
-                            Other
-                        </label>
-                        -->
-                    </td>
-                    <td>
-                        <select id="helmet_rarity">
-                            <option value="standard" selected>Standard</option>
-                            <option value="red_black">Red/Black</option>
-                        </select>
-                        <!--
-                        <label>
-                            <input type="radio" name="helmet_rarity" value="standard" id="helmet_rarity">
-                            Standard
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" name="helmet_rarity" value="red_black" id="helmet_rarity">
-                            Red/Black
-                        </label>
-                        -->
-                    </td>
-                </tr>
-
-
-
-                <tr>
-					<td>
-                        Gloves<br>
-                        <div class="container mt-4">
-                            <img src="sprites/gloves.png" alt="Gloves Icon" height="40">
-                        </div>
-                    </td>
-                    <td>
-                        <input type="number" id="gloves_mastery" class="form-control-sm" min="0" max="5" value="0">
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" id="gloves_collection_red">
-                            Red
-                        </label>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="nimble" class="form-control-sm" min="0" max="12" value="0">
-                            Nimble
-                        </label>
-                    </td>
-                    <td>
-                        <select id="gloves">
-                            <option value="titan_gloves">Titan</option>
-                            <option value="medusa_gloves">Medusa</option>
-                            <option value="dragonfly_gloves">Dragonfly</option>
-                            <option value="ronson_gloves">Ronson</option>
-                            <option value="hardplate_gloves">Hardplate</option>
-                            <option value="other_gloves" selected>Other</option>
-                        </select>
-
-                        <!--
-                        <label>
-                            <input type="radio" id="gloves" name="gloves" value="titan_gloves">
-                            Titan
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="gloves" name="gloves" value="medusa_gloves">
-                            Medusa
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="gloves" name="gloves" value="dragonfly_gloves">
-                            Dragonfly
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="gloves" name="gloves" value="ronson_gloves">
-                            Ronson
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="gloves" name="gloves" value="hardplate_gloves">
-                            Hardplate
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" id="gloves" name="gloves" value="other_gloves">
-                            Other
-                        </label>
-                        -->
-                    </td>
-                    <td>
-                        <select id="gloves_rarity">
-                            <option value="standard" selected>Standard</option>
-                            <option value="red_black">Red/Black</option>
-                        </select>
-
-                        <!--
-                        <label>
-                            <input type="radio" name="gloves_rarity" value="standard" id="gloves_rarity">
-                            Standard
-                        </label>
-                        <br>
-                        <label>
-                            <input type="radio" name="gloves_rarity" value="red_black" id="gloves_rarity">
-                            Red/Black
-                        </label>
-                        -->
-                    </td>
-                </tr>
-
-
-
-                <tr>
-					<td>
-                        Pants<br>
-                        <div class="container mt-4">
-                            <img src="sprites/pants.png" alt="Pants Icon" height="40">
-                        </div>
-                    </td>
-                    <td>
-                        <p>-</p>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" id="pants_collection_standard">
-                            Standard
-                        </label>
-                    </td>
-                    <td>
-                        <p>-</p>
-                    </td>
-                    <td>
-                        <p>-</p>
-                    </td>
-                    <td>
-                        <p>-</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="6" class="text-center">
-                        <button id="max_armor_button"><b>Max Everything</b></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
     </div>
-    <div class="container text-center mt-5">
-        <table class="table table-bordered">
-            <thead>
-                <th>All Class Skills</th>
-                <th>Assault Skills</th>
-                <th>Heavy Skills</th>
-                <th>Medic Skills</th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="number" id="fast_reload" class="form-control-sm" min="0" max="25" value="0">
-                            Fast Reload
-                        </label>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="adrenaline" class="form-control-sm" min="0" max="25" value="0">
-                            Adrenaline
-                        </label>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="hold_the_line" class="form-control-sm" min="0" max="25" value="0">
-                            Hold The Line
-                        </label>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="biocleanse_bomb" class="form-control-sm" min="0" max="25" value="0">
-                            Biocleanse Bomb
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="number" id="critical_shot" class="form-control-sm" min="0" max="25" value="0">
-                            Critical Shot
-                        </label>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="killing_spree" class="form-control-sm" min="0" max="25" value="0">
-                            Killing Spree
-                        </label>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="heavy_gear" class="form-control-sm" min="0" max="25" value="0">
-                            Heavy Gear
-                        </label>
-                    </td>
-                    <td>
-                        <button id="25_bcb">25 BCB</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="11_fast_reload">11 Fast Reload</button>
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="deadly_force" class="form-control-sm" min="0" max="25" value="0">
-                            Deadly Force
-                        </label>
-                    </td>
-                    <td><button id="25_htl">25 HTL</button></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button id="25_critical_shot">25 Critical Shot</button>
-                    </td>
-                    <td>
-                        <button id="25_ks_adr">25 ADR + KS</button>
-                    </td>
-                    <td>
-                        <button id="25_htl_hg">25 HTL + HG</button>
-                    </td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-	</div>
-
-
-    <div class="container text-center mt-5">
-        <table class="gun-table table table-bordered">
-            <tbody>
-                <tr>
-                    <td>
-                        <label for="gun_name">
-                            Gun
-                        </label>
-                    </td>
-                    <td>
-                        <select id="gun_name">
-                            <option value="no_gun" selected>----------</option>
-                            <optgroup label="Pistols">
-                                <option value="HVM 001">HVM 001</option>
-                                <option value="CM 202">CM 202</option>
-                                <option value="RIA 313">RIA 313</option>
-                                <option value="Sabre">Sabre</option>
-                                <option value="RIA 1010">RIA 1010</option>
-                                <option value="Poison Claw">Poison Claw</option>
-                                <option value="CM 205">CM 205</option>
-                                <option value="Trailblazer">Trailblazer</option>
-                                <option value="CM 225">CM 225</option>
-                                <option value="Handkanone">Handkanone</option>
-                                <option value="Ronson 45">Ronson 45</option>
-                                <option value="Mustang">Mustang</option>
-                            </optgroup>
-                            <optgroup label="Assault Rifles">
-                                <option value="Z-1 Assault">Z-1 Assault</option>
-                                <option value="HVM 005 G-Class">HVM 005 G-Class</option>
-                                <option value="RIA 20 DSC">RIA 20 DSC</option>
-                                <option value="RIA 20 Para">RIA 20 Para</option>
-                                <option value="RIA 20 Striker">RIA 20 Striker</option>
-                                <option value="Raptor">Raptor</option>
-                                <option value="CM 440 Titan">CM 440 Titan</option>
-                                <option value="Heartburn">Heartburn</option>
-                                <option value="CM 401 Planet Stormer">CM 401 Planet Stormer</option>
-                                <option value="CM Gigavolt">CM Gigavolt</option>
-                                <option value="Ronson 65-a">Ronson 65-a</option>
-                                <option value="Bayonet">Bayonet</option>
-                                <option value="Planet Stormer Ltd Edition">Planet Stormer Ltd Edition</option>
-                                <option value="Ronson 70">Ronson 70</option>
-                                <option value="CM 451 Starburst">CM 451 Starburst</option>
-                                <option value="Hard Thorn">Hard Thorn</option>
-                                <option value="Mixmaster">Mixmaster</option>
-                                <option value="Sub-light COM2">Sub-light COM2</option>
-                                <option value="CM 352 Quasar">CM 352 Quasar</option>
-                                <option value="CM 000 Kelvin">CM 000 Kelvin</option>
-                                <option value="HIKS A10">HIKS A10</option>
-                                <option value="RIA Trident">RIA Trident</option>
-                            </optgroup>
-                            <optgroup label="Shotguns">
-                                <option value="HVM 004">HVM 004</option>
-                                <option value="RIA 30 Strikeforce">RIA 30 Strikeforce</option>
-                                <option value="Stripper">Stripper</option>
-                                <option value="Donderbus">Donderbus</option>
-                                <option value="Shotlite Tempest">Shotlite Tempest</option>
-                                <option value="Shockfield">1887 Shockfield</option>
-                                <option value="Ronson 5X5">Ronson 5X5</option>
-                            </optgroup>
-                            <optgroup label="Sniper Rifles">
-                                <option value="RIA 50">RIA 50</option>
-                                <option value="CM 800 Jupiter">CM 800 Jupiter</option>
-                                <option value="HIKS S300">HIKS S300</option>
-                                <option value="Hornet">Hornet</option>
-                                <option value="RIA 75">RIA 75</option>
-                                <option value="HIKS 888 CAW">HIKS 888 CAW</option>
-                            </optgroup>
-                            <optgroup label="SMGs">
-                                <option value="Z-2 LMP">Z-2 LMP</option>
-                                <option value="RIA 7">RIA 7</option>
-                                <option value="HVM 002">HVM 002</option>
-                                <option value="CM 330">CM 330</option>
-                                <option value="Phantom">Phantom</option>
-                                <option value="RIA T7">RIA T7</option>
-                                <option value="CM 307">CM 307</option>
-                                <option value="CM 351 Sunflare">CM 351 Sunflare</option>
-                                <option value="RIA 8A">RIA 8A</option>
-                                <option value="Ronson 50">Ronson 50</option>
-                                <option value="Ronson 55">Ronson 55</option>
-                                <option value="RIA 15 SE">RIA 15 SE</option>
-                                <option value="CM 467">CM 467</option>
-                            </optgroup>
-                            <optgroup label="Lasers">
-                                <option value="Hotspot">Hotspot</option>
-                                <option value="CM Laser Drill">CM Laser Drill</option>
-                                <option value="CM Proton Arc">CM Proton Arc</option>
-                            </optgroup>
-                            <optgroup label="Flame Throwers">
-                                <option value="Ronson WP Flamethrower">Ronson WP Flamethrower</option>
-                                <option value="Ronson WPX Incinerator">Ronson WPX Incinerator</option>
-                            </optgroup>
-                            <optgroup label="Disc Throwers">
-                                <option value="Ricochet">Ricochet</option>
-                                <option value="Shredder">Shredder</option>
-                            </optgroup>
-                            <optgroup label="Rocket Launchers">
-                                <option value="HVM MPG">HVM MPG</option>
-                                <option value="T-101 Feldhaubitz">T-101 Feldhaubitz</option>
-                                <option value="Lone Star">Lone Star</option>
-                                <option value="Vitriol">Vitriol</option>
-                                <option value="Gebirgskanone">Gebirgskanone</option>
-                                <option value="T-102 Jagdfaust">T-102 Jagdfaust</option>
-                                <option value="Luftplatzen">Luftplatzen</option>
-                                <option value="HIKS 3100">HIKS 3100</option>
-                                <option value="Zerfallen">Zerfallen</option>
-                                <option value="Torment">Torment</option>
-                                <option value="HIKS S4000">HIKS S4000</option>
-                                <option value="CM X-1 Furie">CM X-1 Furie</option>
-                            </optgroup>
-                            <optgroup label="LMGs">
-                                <option value="Z-5 Heavy">Z-5 Heavy</option>
-                                <option value="HVM 008">HVM 008</option>
-                                <option value="Ronson LBM">Ronson LBM</option>
-                                <option value="RIA 40">RIA 40</option>
-                                <option value="RIA 45 Para">RIA 45 Para</option>
-                                <option value="CM 505">CM 505</option>
-                                <option value="CM 530 BabyCOM">CM 530 BabyCOM</option>
-                                <option value="Tombstone">Tombstone</option>
-                                <option value="Proposition">Proposition</option>
-                                <option value="RIA T40">RIA T40</option>
-                                <option value="Supermarine">Supermarine</option>
-                                <option value="CM 505 Alpha Ltd. Edition">CM 505 Alpha Ltd. Edition</option>
-                                <option value="Supermarine Alpha Ltd Edition">Supermarine Alpha Ltd. Edition</option>
-                                <option value="HIKS M1000">HIKS M1000</option>
-                            </optgroup>  
-                        </select>
-                    </td>
-                    <td>
-                        <label>
-                            Rarity
-                        </label>
-                    </td>
-                    <td>
-                        <select id="gun_rarity">
-                            <option value="0">Standard</option>
-                            <option value="1">Red</option>
-                            <option value="2">Black</option>
-                        </select>
-                        <!-- 
-                        <label>
-                            <input type="radio" name="gun_rarity" value="0" id="gun_rarity">
-                            Standard
-                        </label>
-                        <label>
-                            <input type="radio" name="gun_rarity" value="1" id="gun_rarity">
-                            Red
-                        </label>
-                        <label>
-                            <input type="radio" name="gun_rarity" value="2" id="gun_rarity">
-                            Black
-                        </label>
-                        -->
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            Augment 1
-                        </label>
-                    </td>
-                    <td>
-                        <select id="augment_1">
-                            <option value="no_aug" selected>----------</option>
-                            <option value="deadly">Deadly</option>
-                            <option value="overclocked">Overclocked</option>
-                            <option value="adaptive">Adaptive</option>
-                            <option value="pinpoint">Pinpoint</option>
-                            <option value="capacity">Capacity</option>
-                            <option value="biosynthesis">Biosynthesis</option>
-                            <option value="enlarged">Enlarged</option>
-                            <option value="tenacious">Tenacious</option>
-                            <option value="skeletonized">Skeletonized</option>
-                            <option value="piercing">Piercing</option>
-                            <option value="race_modded">Race Modded</option>
-                        </select>
-                        <input type="number" id="augment_1_level" min="0" max="12" value="0">
-                        <button id="augment_1_grade_12">Grade 12</button>
-                        <button id="augment_1_grade_10">Grade 10</button>
-                    </td>
-                    <td>
-                        Masteries
-                    </td>
-                    <td>
-                        <label>
-                            <input type="number" id="gun_mastery" min="0" max="5" value="0">
-                            Gun
-                        </label>
-                        <label class="ms-4">
-                            <input type="number" id="ammo_mastery" min="0" max="5" value="0">
-                            HDA
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            Augment 2
-                        </label>
-                    </td>
-                    <td>
-                        <select id="augment_2">
-                            <option value="no_gun" selected>----------</option>
-                            <option value="deadly">Deadly</option>
-                            <option value="overclocked">Overclocked</option>
-                            <option value="adaptive">Adaptive</option>
-                            <option value="pinpoint">Pinpoint</option>
-                            <option value="capacity">Capacity</option>
-                            <option value="biosynthesis">Biosynthesis</option>
-                            <option value="enlarged">Enlarged</option>
-                            <option value="tenacious">Tenacious</option>
-                            <option value="skeletonized">Skeletonized</option>
-                            <option value="piercing">Piercing</option>
-                            <option value="race_modded">Race Modded</option>
-                        </select>
-                        <input type="number" id="augment_2_level" min="0" max="12" value="0">
-                        <button id="augment_2_grade_12">Grade 12</button>
-                        <button id="augment_2_grade_10">Grade 10</button>
-                    </td>
-                    <td>
-                        Collections
-                    </td>
-                    <td>
-                        <label>
-                            <input type="checkbox" id="standard_gun_collection">
-                            Standard
-                        </label>
-                        <label>
-                            <input type="checkbox" id="red_gun_collection">
-                            Red
-                        </label>
-                        <label>
-                            <input type="checkbox" id="black_gun_collection">
-                            Black
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            Augment 3
-                        </label>
-                    </td>
-                    <td>
-                        <select id="augment_3">
-                            <option value="no_gun" selected>----------</option>
-                            <option value="deadly">Deadly</option>
-                            <option value="overclocked">Overclocked</option>
-                            <option value="adaptive">Adaptive</option>
-                            <option value="pinpoint">Pinpoint</option>
-                            <option value="capacity">Capacity</option>
-                            <option value="biosynthesis">Biosynthesis</option>
-                            <option value="enlarged">Enlarged</option>
-                            <option value="tenacious">Tenacious</option>
-                            <option value="skeletonized">Skeletonized</option>
-                            <option value="piercing">Piercing</option>
-                            <option value="race_modded">Race Modded</option>
-                        </select>
-                        <input type="number" id="augment_3_level" min="0" max="12" value="0">
-                        <button id="augment_3_grade_12">Grade 12</button>
-                        <button id="augment_3_grade_10">Grade 10</button>
-                    </td>
-                    <td>
-                        Base Cores
-                    </td>
-                    <td>
-                        <input type="number" id="weapon_base_cores" min="0" max="11" value="0">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            Augment 4
-                        </label>
-                    </td>
-                    <td>
-                        <select id="augment_4">
-                            <option value="no_gun" selected>----------</option>
-                            <option value="deadly">Deadly</option>
-                            <option value="overclocked">Overclocked</option>
-                            <option value="adaptive">Adaptive</option>
-                            <option value="pinpoint">Pinpoint</option>
-                            <option value="capacity">Capacity</option>
-                            <option value="biosynthesis">Biosynthesis</option>
-                            <option value="enlarged">Enlarged</option>
-                            <option value="tenacious">Tenacious</option>
-                            <option value="skeletonized">Skeletonized</option>
-                            <option value="piercing">Piercing</option>
-                            <option value="race_modded">Race Modded</option>
-                        </select>
-                        <input type="number" id="augment_4_level" min="0" max="12" value="0">
-                        <button id="augment_4_grade_12">Grade 12</button>
-                        <button id="augment_4_grade_10">Grade 10</button>
-                    </td>
-                    <td>
-                        Target
-                    </td>
-                    <td>
-                        <select id="enemy_rarity">
-                            <option value="no_rarity" selected>----------</option>
-                            <option value="normal">Normal</option>
-                            <option value="fetid">Fetid</option>
-                            <option value="evolved">Evolved</option>
-                            <option value="apex">Apex</option>
-                            <option value="savage">Savage</option>
-                        </select>
-                        <select id="enemy_type">
-                            <option value="no_enemy" selected>----------</option>
-                            <option value="necrosis">Necrosis</option>
-                        </select>
-                        <select id="elite_type">
-                            <option value="not_elite" selected>----------</option>
-                            <option value="elite_other">Elite (other)</option>
-                            <option value="chitinous_hide">Elite (Berserk)</option>
-                        </select>
-                        <p>in</p>
-                        <select id="gamemode">
-                            <option value="no_mode" selected>----------</option>
-                            <option value="normal_mode">Normal</option>
-                            <option value="nightmare">Nightmare</option>
-                            <option value="apocalypse">Apocalypse</option>
-                        </select>
-                        <label class="ms-5">
-                            <input type="checkbox" id="red_perk">
-                            Killing Machine
-                        </label>
-                        <label class="ms-4">
-                            <input type="checkbox" id="boss_target">
-                            Shooting at boss
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="4" class="text-center">
-                        <button id="max_weapon_button"><b>Max Everything</b></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <button class="btn btn-success wide-button" id="calculate_button">Calculate!</button>
-        <br>
-        <br>
-        <br>
-        <div class="results-box container py-2" style="width: 50%;">
-            <h5><b>Results:</b></h5>
-            <div id="results"></div>
-        </div>
-        <div class="container">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-    </div>
-
 
 
 
@@ -794,6 +795,8 @@
         const enemy_type = document.getElementById("enemy_type");
         const elite_type = document.getElementById("elite_type");
         const gamemode = document.getElementById("gamemode");
+        const user_gun = document.getElementById("gun_name");
+        const user_gun_rarity = document.getElementById("gun_rarity");
 
 
         const unique_guns = ["HIKS M1000","CM X-1 Furie","RIA Trident","Handkanone","Bayonet","Planet Stormer Ltd Edition","CM 352 Quasar","HIKS A10","CM 000 Kelvin","Donderbus","Ronson 5X5","RIA 75","HIKS 888 CAW","RIA 8A","RIA 15 SE","CM 467","CM Laser Drill","CM Proton Arc","Ronson WPX Incinerator","Ricochet","Vitriol","Zerfallen","Torment","HIKS S4000","CM 505 Alpha Ltd. Edition","Supermarine Alpha Ltd Edition"]
@@ -841,6 +844,18 @@
             armorData = await response.json();
         };
         loadArmorData();
+
+        user_gun.addEventListener("change", () => {
+            if(prem_guns.includes(user_gun.value)){
+                user_gun_rarity.value = "0";
+                user_gun_rarity.disabled = true;
+            } else if(cs_guns.includes(user_gun.value)){
+                user_gun_rarity.value = "2";
+                user_gun_rarity.disabled = true;
+            } else {
+                user_gun_rarity.disabled = false;
+            }
+        });
 
         // Resets mastery sliders to 5 or 0 if limits are exceeded
         helm_m.addEventListener("input", () => {
@@ -996,7 +1011,11 @@
         // other thing but for gun augs
 
         max_weapon_button.addEventListener("click",()=>{
-            gun_rarities.value = 2;
+            if(prem_guns.includes(user_gun.value)){
+                gun_rarities.value = 0;
+            } else {
+                gun_rarities.value = 2;
+            }
             gun_mastery.value = 5;
             ammo_mastery.value = 5;
             standard_gun_collection.checked=true;
@@ -1657,7 +1676,7 @@
             let ehp = 0;
             if(hp !== 0){
                 let resistance_modifier = 0;
-                if(gun_block.damageType === 3){
+                if(gun_block[0].damageType === 3){
                     resistance_modifier = 0.5;
                 }
                 if(augs.includes("adaptive")){
@@ -1667,6 +1686,14 @@
                         item => item.name === "adaptive"
                     );
                     resistance_modifier -= adaptive[grade];
+                }
+                if(biocleanse_bomb.value != 0){
+                    resistance_modifier *= 0.5;
+                }
+                if(gun_block[0].category === 6 && gun_mastery.value == 5){
+                    resistance_modifier *= (1-0.25);
+                } else if(gun_block[0].category === 9 && gun_mastery.value == 5){
+                    resistance_modifier *= (1-0.35);
                 }
                 ehp = hp/(1-resistance_modifier);
             }
@@ -1693,10 +1720,22 @@
             }
         }
 
+        function get_burst(gun){
+            const weaponsAllRarities = weaponsData.filter(
+                item => item.name === gun
+            );
+            const foundWeapon = weaponsAllRarities[0];
+            if(foundWeapon.burstSpeed !== 0){
+                return foundWeapon.burstCount;
+            } else {
+                return 1;
+            }
+        }
+
+        
 
 
         calculate_button.addEventListener("click",()=>{
-            const user_gun = document.getElementById("gun_name");
             const user_gun_block = weaponsData.filter(
                 item => item.name === user_gun.value
             );
@@ -1713,7 +1752,6 @@
             const user_gloves = document.getElementById("gloves");
             const user_gloves_rarity = document.getElementById("gloves_rarity");
             const user_gun_collections = [standard_gun_collection.checked,red_gun_collection.checked,black_gun_collection.checked];
-            const user_gun_rarity = document.getElementById("gun_rarity");
 
             let damage = (
                 (
@@ -1777,7 +1815,7 @@
 
             let rps = (
                 (
-                    get_rps(user_gun.value,Number(user_gun_rarity.value))*(1+0.05*Number(base_core_level.value))*(1+0.1*get_overclocked_level(augs))
+                    get_rps(user_gun.value,Number(user_gun_rarity.value))*(1+0.05*Number(base_core_level.value))*(1+0.1*get_overclocked_level(augs))*get_burst(user_gun.value)
                 )/(
                     1-(get_adrenaline_boost(adrenaline.value)+(get_mastery_rps(user_gun_category,gun_mastery.value)+get_collection_rps(user_gun_category,user_gun_collections)))
                 )
@@ -1822,6 +1860,7 @@
             let target_ehp = get_target_ehp(target_hp,user_gun.value,user_gun_block,augs);
             let ttk = get_ttk(target_ehp,average_damage,clip_size,reload_time,rps);
 
+            // let movement_pen = get_movement_penalty(user_gun.value,user_gun_category,heavy_gear.value,)
             
             results.innerHTML =
                 `<table class="table table-bordered monospaced-text">
@@ -1918,6 +1957,14 @@
                         <tr>
                             <td style="width: 50%;">TTK (seconds)</td>
                             <td style="width: 50%;">${ttk.toLocaleString(undefined, {maximumFractionDigits: 4})}</td>
+                        </tr>
+                        <tr>
+                            <td>Target HP</td>
+                            <td>${target_hp.toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
+                        </tr>
+                        <tr>
+                            <td>Target EHP</td>
+                            <td>${target_ehp.toLocaleString(undefined, {maximumFractionDigits: 2})}</td>
                         </tr>
                     </tbody>
                 </table>

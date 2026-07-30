@@ -27,3 +27,22 @@
 .monospaced-text{
 	font-variant-numeric: tabular-nums;
 }
+.px-6{
+	padding-left: 6rem;
+	padding-right: 6rem;
+}
+
+body {
+	transform: scale(0.8);
+	transform-origin: top left;
+	width: 125%;
+}
+
+/*
+html {
+	font-size: 90%;
+}
+.site-container {
+	max-width: 1600px;
+}
+*/
