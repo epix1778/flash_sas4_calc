@@ -4,17 +4,13 @@ Accurate flash SAS4 calculator
 TO DO LIST/KNOWN ISSUES
 
         - my code sucks (unfixable)
-        - prem guns/cs guns won't calculate if wrong rarity is selected
-        - burst guns are completely wrong atm (doesn't factor in burst count/delay (will fix this eventually))
         - class skills cooldowns are not factored into average dps calc
         - need to change dropdowns back to radio buttons?
         - capacity calc probably slightly wrong for low capacity pistols w/ mastery
         - average dps slightly wrong (i don't understand alber)
         - target system needs to be finished
         - pinpoint calculated incorrectly (?)
-        - move results table to right side of screen
         - add remaining features: one shots until wave x, one clips until wave x, pierce, shielder dps, finish ttk, screenshot feature?, movement penalty, range slider/visualizer?
-        - bcb and mastery adaptives do not affect target ehp yet
         - class skill cooldowns are not factored into ttk calc
         - need to make it so selecting a boss target automatically assumes shooting at boss
         - add min/max ttk?
@@ -47,3 +43,11 @@ Version 0.4
 
 Version 0.4.1
 - Fixed Zerfallen capacity bug
+
+Version 0.5
+- Fixed max everything on weapons to not set prem rarities to black
+- Fixed dps for burst guns (i think)
+- Fixed bcb and mastery adaptive not applying to ttk
+- Prevented changing rarities on prem/cs guns
+- Moved results table to the right for easier viewing (lmk your inputs on this)
+- Reduced size of everything on the page to show all buttons/inputs without the need to scroll (lmk your inputs on this; it might be broken/buggy depending on your device)
